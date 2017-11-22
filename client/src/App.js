@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Articles from "./pages/Articles";
+import Experiences from "./pages/Experience";
 import Nav from "./components/Nav";
 
 const App = () =>
@@ -8,8 +8,8 @@ const App = () =>
     <div>
       <Nav />
       <Switch>
-        <Route exact path="/" component={Articles} />
-        <Route exact path="/search" component={Articles} />
+        <Route exact path="/" component={Experiences} />
+        <Route exact path="/search" component={Experiences} />
       </Switch>
     </div>
   </Router>;

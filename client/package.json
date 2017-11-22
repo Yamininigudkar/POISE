@@ -4,9 +4,12 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "google-map-react": "^0.25.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14"
+    "react-google-maps": "^9.2.2",
+    "react-scripts": "1.0.14",
+    "webpack": "^3.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
