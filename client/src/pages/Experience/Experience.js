@@ -64,18 +64,25 @@ class Experience extends React.PureComponent {
       <h1 style={{color:"#622222"}}>POISE</h1>
       <h2 style={{color:"#622222"}}>Point of interest sharing and exploring</h2>
       </Jumbotron>
+      
+      </Col>
+      </Row>
+      <Row>
+      <Col size="md-3">
       <GoogleLogin
     clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
     buttonText="Login"
     onSuccess={responseGoogle}
     onFailure={responseGoogle}
   />
-  
-      <h2>Search</h2>
       </Col>
-      </Row>
-      <Row>
-      <Col size="md-6">
+      <Col size="md-5">
+      <MyMapComponent
+        isMarkerShown={this.state.isMarkerShown}
+        onMarkerClick={this.handleMarkerClick}
+      />
+      </Col>
+      <Col size="md-4">
       <form>
       <Input
       
@@ -93,13 +100,7 @@ class Experience extends React.PureComponent {
       </FormBtn>
       </form>
       </Col>
-      <Col size="md-6">
-      <MyMapComponent
-        isMarkerShown={this.state.isMarkerShown}
-        onMarkerClick={this.handleMarkerClick}
-      />
-      </Col>
-
+      
       </Row>
 
       <Row><hr/></Row>
