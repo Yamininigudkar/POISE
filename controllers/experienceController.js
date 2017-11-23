@@ -2,7 +2,8 @@
 var express = require("express");
 var app = express();
 var path = require("path");
-var Article = require("./../models/article.js");
+var Experience = require("./../models/experience.js");
+var User = require("./../models/user.js");
 
 module.exports = function (app) {
   app.get("/", function (req, res) {
@@ -14,9 +15,9 @@ module.exports = function (app) {
   });
 
   app.post("/api/saved", function (req, res) {
-    var newArticle = new Article(req.body);
+    var newExperience = new Experience(req.body);
 
-    newArticle.save(function (err, doc) {
+    newExperience.save(function (err, doc) {
       if (err) {
         res.send(err)
       }else {
@@ -26,7 +27,7 @@ module.exports = function (app) {
   });
 
   app.get("/api/saved", function (req, res) {
-    Article.find({}, function (err, doc) {
+    Experience.find({}, function (err, doc) {
       if (err) {
         res.send(err);
       } else {
@@ -37,7 +38,7 @@ module.exports = function (app) {
 
   //deleting what the user chooses to delete
   app.delete("/api/saved/:id", function(req, res){
-    Article.findByIdAndRemove(req.params.id, function (error, doc) {
+    Experience.findByIdAndRemove(req.params.id, function (error, doc) {
       if (error) {
         res.send(error);
       } else{

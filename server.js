@@ -15,13 +15,13 @@ app.use(express.static("client/build"));
 // app.use(express.static(path.join((__dirname, "./public"))));
 
 //Requiring the routes from the controllers.js file
-require("./controllers/articleController.js")(app);
+require("./controllers/experienceController.js")(app);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 mongoose.connect(
-	process.env.MONGODB_URI || "mongodb://localhost/nytreact",
+	process.env.MONGODB_URI || "mongodb://localhost/poiseDb",
 	{
 		useMongoClient: true
 	}
