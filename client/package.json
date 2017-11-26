@@ -6,8 +6,13 @@
   "dependencies": {
     "axios": "^0.17.1",
     "google-map-react": "^0.25.0",
+<<<<<<< HEAD
     "material-ui": "^1.0.0-beta.21",
     "material-ui-icons": "^1.0.0-beta.17",
+=======
+    "material-ui": "^0.19.4",
+    "material-ui": "^1.0.0-beta.21",
+>>>>>>> ceb2abadd414720b95bf652d098f5a4369717946
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-google-login": "^3.0.2",

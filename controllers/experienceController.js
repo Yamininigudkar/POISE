@@ -1,51 +1,35 @@
-// const db = require("../models");
-var express = require("express");
-var app = express();
-var path = require("path");
-var Experience = require("./../models/experience.js");
-var User = require("./../models/user.js");
+let express = require('express');
+let router = new express.Router();
+let path = require('path');
+let actions = require('../models/actions.js');
 
-module.exports = function (app) {
-  app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname + "/../public/", "index.html"));
-  });
+//Routes
+router.get('/', function (req, res) {
+    res.send(path.join(__dirname + './public/index.html'));
+})
 
-  app.get("/favicon.ico", function (req, res) {
-    res.send(204);
-  });
+router.post('/autocomplete', actions.autocomplete);
 
-  app.post("/api/saved", function (req, res) {
-    var newExperience = new Experience(req.body);
+router.post('/getcoordinates', actions.getCoordinates);
 
-    newExperience.save(function (err, doc) {
-      if (err) {
-        res.send(err)
-      }else {
-        res.json(doc)
-      }
-    });
-  });
+router.post('/googleplaces', actions.googlePlaces);
 
-  app.get("/api/saved", function (req, res) {
-    Experience.find({}, function (err, doc) {
-      if (err) {
-        res.send(err);
-      } else {
-        res.send(doc);
-      }
-    });
-  });
+router.post('/placedetails', actions.placeDetails);
 
-  //deleting what the user chooses to delete
-  app.delete("/api/saved/:id", function(req, res){
-    Experience.findByIdAndRemove(req.params.id, function (error, doc) {
-      if (error) {
-        res.send(error);
-      } else{
-        res.send(doc);
-      }
-    });
-  });
-};
+// Receives and authenticates login information from existing users
+router.post('/existinguser', actions.existingUser);
 
+// Accepts login information from new users, checks if the username exists, and saves the user if unique
+router.post('/newuser', actions.newUser);
 
+router.post('/newExperience', actions.newExperience);
+
+router.post('/getExperiences', actions.getExperiences);
+
+router.post('/findone', actions.findOne);
+
+router.post('/userExperiences', actions.userExperiences);
+
+router.post('/deleteExperience', actions.deleteExperience);
+
+module.exports = router;
