@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 var path = require("path");
 const app = express();
+let routes = require('./controllers/experienceController.js');
 const PORT = process.env.PORT || 3001;
 
 // Configure body parser for AJAX requests
@@ -15,7 +16,7 @@ app.use(express.static("client/build"));
 // app.use(express.static(path.join((__dirname, "./public"))));
 
 //Requiring the routes from the controllers.js file
-require("./controllers/experienceController.js")(app);
+app.use('/', routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
