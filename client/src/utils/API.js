@@ -17,6 +17,9 @@ export default {
 	},
 	deleteArticle:function(id) {
 		return axios.delete("/api/saved/"+ id);
+	},
+	userLogin: function(userData) {
+			return axios.post("/existinguser",userData)
 	}
 
 };

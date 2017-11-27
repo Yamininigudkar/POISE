@@ -1,4 +1,5 @@
 import React  from 'react'
+import API from '../../utils/API';
 
 import { 
   Grid, Typography, Divider, TextField,
@@ -43,8 +44,17 @@ class Leftbar extends React.Component{
     })
   }
 
-  login(){
-    console.log('going to login')
+  login(event){
+    event.preventDefault()
+    const userData={
+     username : this.state.username,
+     password : this.state.password
+   }
+ console.log("login")
+    console.log(userData)
+    API.userLogin(userData)
+    .then(res => console.log("Response",res))
+    .catch(err => console.log(err));
   }
 
   signup(){
@@ -99,6 +109,7 @@ class Leftbar extends React.Component{
           <Grid item lg={12} md={12} sm={12} id='item-password'>
             <TextField fullWidth
               id='password' value={this.state.password}
+              type = 'password'
               onChange={this.changePassword}
               label='Password'
             />
