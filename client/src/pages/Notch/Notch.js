@@ -14,7 +14,7 @@ import Leftbar from './Leftbar'
 import AddNotch from './AddNotch'
 import NotchesList from './NotchesList'
 import Navbar from './Navbar'
-import '../../styles/experience.css'
+import '../../styles/Notch.css'
 
 import {
   withScriptjs,
@@ -23,10 +23,12 @@ import {
   Marker,
 } from 'react-google-maps';
 
+const googleMapqueryUrl = "https:/"+ "/maps.googleapis.com/maps/api/js?key=AIzaSyDM80HdqN8I7OZaOY9B8MUjFa3kguMhB_E&callback=initMap"
+
+
 const MyMapComponent = compose(
   withProps({
-    googleMapURL:
-      'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places',
+    googleMapURL:googleMapqueryUrl,
     loadingElement: <div style={{height: `100%`}} />,
     containerElement: <div style={{height: `400px`}} />,
     mapElement: <div style={{height: `100%`}} />,
@@ -45,12 +47,13 @@ const MyMapComponent = compose(
 ));
 
 
-class Experience extends React.PureComponent {
+class Notch extends React.PureComponent {
   state = {
     isMarkerShown: false,
   };
 
   componentDidMount() {
+
     this.delayedShowMarker();
   }
 
@@ -93,4 +96,4 @@ class Experience extends React.PureComponent {
   }
 }
 
-export default Experience;
+export default Notch;
