@@ -1,0 +1,148 @@
+import React from 'react'
+
+import { 
+  Grid, Typography, Select,
+  Divider, TextField, Button
+} from 'material-ui'
+import { FormControl } from 'material-ui/Form'
+import { MenuItem } from 'material-ui/Menu'
+import { Clear } from 'material-ui-icons'
+import '../../styles/rightbar.css'
+
+class SignUp extends React.Component{
+
+  constructor(props){
+    super(props)
+    this.changeCategory = this.changeCategory.bind(this)
+    this.changefirstName = this.changefirstName.bind(this)
+    this.changelastName = this.changelastName.bind(this)
+    this.changePassword = this.changePassword.bind(this)
+    this.addUser = this.addUser.bind(this)
+    this.state = {
+      category: 'first',
+      firstName: '',
+      lastName: '',
+      password: '',
+      confirmPassword:''
+    }
+  }
+
+  changeCategory(event){
+    this.setState({
+      category: event.target.value
+    })
+  }
+
+  changefirstName(event){
+    this.setState({
+      firstName: event.target.value
+    })
+  }
+
+  changelastName(event){
+    this.setState({
+      lastName: event.target.value
+    })
+  }
+  changePassword(event){
+    this.setState({
+      password: event.target.value
+    })
+  }
+
+  addUser(){
+    alert('User added')
+  }
+
+  render(){
+    return (
+      <Grid container id='add-notch-dialog' style={{ margin: '10px'}}>
+        <Grid item lg={1} md={1} sm={1} > </Grid>
+        <Grid item lg={10} md={10} sm={10} >
+          <Grid container>
+            <Grid item lg={12} md={12} sm={12} >
+                  <center>
+                    <Typography type='heading' component='h1' color='primary'>
+                      Sign-Up!!
+                    </Typography>
+                  </center>
+            </Grid>
+            <Grid item lg={12} md={12} sm={12} >
+              <Divider />
+            </Grid>
+            
+            <Grid item lg={6} md={6} sm={6} >
+              <FormControl fullWidth >
+                <Select
+                  value={this.state.category}
+                  onChange={this.changeCategory}
+                  id='category' >
+
+                  <MenuItem value='first' onClick={this.changeCategory}>Mr.</MenuItem>
+                  <MenuItem value='second' onClick={this.changeCategory}>Mrs./Ms.</MenuItem>
+                  
+                </Select>
+              </FormControl>
+
+            </Grid>
+            <Grid item lg={12} md={12} sm={12} >
+              <Divider />
+            </Grid>
+            <Grid item lg={12} md={12} sm={12} >
+              <Grid container>
+                <Grid item lg={6} md={6} sm={6} >
+                  <TextField id='FN' value={this.state.firstName}
+                    fullWidth onChange={this.changefirstName} label='First Name'
+                  />
+                </Grid>
+                <Grid item lg={6} md={6} sm={6} >
+                  <TextField id='SN' value={this.state.lastName}
+                    fullWidth onChange={this.changelastName} label='Second Name'
+                  />
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid item lg={12} md={12} sm={12} >
+              <Divider />
+            </Grid>
+            <Grid item lg={12} md={12} sm={12} >
+              <TextField  fullWidth id='username' value={this.state.username}
+                onChange={this.changeHeadline} label='Username' 
+              />
+            </Grid>
+            <Grid item lg={12} md={12} sm={12} >
+              <Divider />
+            </Grid>
+            <Grid item lg={12} md={12} sm={12} >
+              <TextField  multiline fullWidth
+                id='password'
+                type = "password" value={this.state.password}
+                onChange={this.changePassword} label='password'
+                rows={3}
+              />
+            </Grid>
+
+            <Grid item lg={12} md={12} sm={12} >
+              <TextField type = "password" multiline fullWidth
+                id='confirmpassword'
+                 value={this.state.password}
+                onChange={this.changePassword} label='confirm password'
+                rows={3}
+              />
+            </Grid>
+            <Grid item lg={12} md={12} sm={12} >
+              <center>
+                <Button raised color='primary' onClick={this.addUser}>
+                  Submit
+                </Button>
+              </center>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item lg={1} md={1} sm={1} > </Grid>
+      </Grid>
+    )
+  }
+}
+
+export default SignUp
