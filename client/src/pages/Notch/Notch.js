@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
 import {Col, Row, Container} from '../../components/Grid';
 import {List, ListItem} from '../../components/List';
 import {Input, FormBtn} from '../../components/Form';
-
+import Google from './Google';
 import { Grid } from 'material-ui'
 import Leftbar from './Leftbar'
 import AddNotch from './AddNotch'
@@ -84,6 +84,7 @@ class Notch extends React.PureComponent {
                 isMarkerShown={this.state.isMarkerShown}
                 onMarkerClick={this.handleMarkerClick}
               />
+              <Google/>
             </Grid>
           </Grid>
         </Grid>

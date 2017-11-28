@@ -4,6 +4,7 @@ import {
   Grid, AppBar, Toolbar, Avatar
 } from 'material-ui'
 import SearchNotches from './SearchNotches'
+import Google from './Google';
 import '../../styles/navbar.css'
 
 class Navbar extends React.Component{
@@ -26,7 +27,7 @@ class Navbar extends React.Component{
               </Avatar>
             </Grid>
             <Grid item lg={10} md={10} sm={10} >
-              <SearchNotches />
+              <SearchNotches/>
             </Grid>
             <Grid item lg={2} md={2} sm={2} > </Grid>
           </Grid>

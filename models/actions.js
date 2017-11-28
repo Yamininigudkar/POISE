@@ -100,9 +100,11 @@ module.exports = {
                 bcrypt.genSalt(10, function (err, salt) {
                     bcrypt.hash(req.body.password, salt, function (err, hash) {
                         let newUser = {
+                            firstName:req.body.firstName,
+                            lastName:req.body.lastName,
                             username: req.body.username,
-                            password: hash,
-                            zipcode: req.body.zipCode
+                            password: hash
+                            
                         }
                         // console.log(newUser);
                         User.create(newUser).then(data => {

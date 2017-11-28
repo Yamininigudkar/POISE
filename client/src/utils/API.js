@@ -6,17 +6,12 @@ export default {
 
 
 	
-	saveArticle:function(articleData) {
-		return axios.post("/api/saved", articleData);
-	},
-	savedArticles:function() {
-		return axios.get("/api/saved");
-	},
-	deleteArticle:function(id) {
-		return axios.delete("/api/saved/"+ id);
-	},
+	
 	userLogin: function(userData) {
 			return axios.post("/existinguser",userData)
+	},
+	userSignUp: function(userData) {
+			return axios.post("/newuser",userData)
 	}
 
 };

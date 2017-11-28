@@ -8,6 +8,7 @@ import { FormControl } from 'material-ui/Form'
 import { MenuItem } from 'material-ui/Menu'
 import { Clear } from 'material-ui-icons'
 import '../../styles/rightbar.css'
+import API from '../../utils/API';
 
 class SignUp extends React.Component{
 
@@ -16,8 +17,10 @@ class SignUp extends React.Component{
     this.changeCategory = this.changeCategory.bind(this)
     this.changefirstName = this.changefirstName.bind(this)
     this.changelastName = this.changelastName.bind(this)
+    this.changeuserName = this.changeuserName.bind(this)
     this.changePassword = this.changePassword.bind(this)
-    this.addUser = this.addUser.bind(this)
+    this.confirmPassword = this.confirmPassword.bind(this)
+    this.signUp = this.signUp.bind(this)
     this.state = {
       category: 'first',
       firstName: '',
@@ -44,14 +47,44 @@ class SignUp extends React.Component{
       lastName: event.target.value
     })
   }
+  changeuserName(event){
+    this.setState({
+      userName: event.target.value
+    })
+  }
   changePassword(event){
     this.setState({
       password: event.target.value
     })
   }
+  confirmPassword(event){
+    this.setState({
+      confirmpassword: event.target.value
+    })
+  }
 
-  addUser(){
-    alert('User added')
+
+  signUp(event){
+    console.log('going to signup')
+    event.preventDefault()
+    if(this.state.password===this.state.confirmpassword)
+    {
+      const userData={
+      firstName : this.state.firstName,
+      lastName : this.state.lastName,
+      username : this.state.username,
+      password : this.state.password
+    }
+
+      API.userSignUp(userData)
+      .then(res => console.log("Response",res))
+      .catch(err => console.log(err));
+    
+    }else {
+      alert("passwords do not match")
+    }
+    
+
   }
 
   render(){
@@ -107,32 +140,32 @@ class SignUp extends React.Component{
             </Grid>
             <Grid item lg={12} md={12} sm={12} >
               <TextField  fullWidth id='username' value={this.state.username}
-                onChange={this.changeHeadline} label='Username' 
+                onChange={this.changeuserName} label='Username' 
               />
             </Grid>
             <Grid item lg={12} md={12} sm={12} >
               <Divider />
             </Grid>
             <Grid item lg={12} md={12} sm={12} >
-              <TextField  multiline fullWidth
+              <TextField fullWidth
                 id='password'
-                type = "password" value={this.state.password}
+                type='password' value={this.state.password}
                 onChange={this.changePassword} label='password'
                 rows={3}
               />
             </Grid>
 
             <Grid item lg={12} md={12} sm={12} >
-              <TextField type = "password" multiline fullWidth
+              <TextField fullWidth type='password'
                 id='confirmpassword'
-                 value={this.state.password}
-                onChange={this.changePassword} label='confirm password'
+                 value={this.state.confirmpassword}
+                onChange={this.confirmPassword} label='confirm password'
                 rows={3}
               />
             </Grid>
             <Grid item lg={12} md={12} sm={12} >
               <center>
-                <Button raised color='primary' onClick={this.addUser}>
+                <Button raised color='primary' onClick={this.signUp}>
                   Submit
                 </Button>
               </center>

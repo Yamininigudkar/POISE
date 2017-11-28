@@ -10,6 +10,7 @@ import AddNotch from './AddNotch'
 import SignUp from './SignUp'
 import { GoogleLogin } from 'react-google-login' 
 import '../../styles/leftbar.css'
+import API from '../../utils/API';
 
 const responseGoogle = response => {
   console.log(response);
@@ -22,7 +23,6 @@ class Leftbar extends React.Component{
     this.changeUsername = this.changeUsername.bind(this)
     this.changePassword = this.changePassword.bind(this)
     this.login = this.login.bind(this)
-    this.signup = this.signup.bind(this)
     this.openGuide = this.openGuide.bind(this)
     this.closeGuide = this.closeGuide.bind(this)
     this.openAddNotch = this.openAddNotch.bind(this)
@@ -47,13 +47,23 @@ class Leftbar extends React.Component{
     })
   }
 
-  login(){
+  login(event){
     console.log('going to login')
-  }
+    event.preventDefault()
+    const userData={
+     username : this.state.username,
+     password : this.state.password
+    }
+  console.log("login")
+     console.log(userData)
+    API.userLogin(userData)
+    .then(res => console.log("Response",res))
+    .catch(err => console.log(err));
+    }
 
-  signup(){
-    console.log('going to signup')
-  }
+  
+
+
 
   openGuide(){
     this.setState({
@@ -110,7 +120,7 @@ class Leftbar extends React.Component{
       />
       </Grid>
       <Grid item lg={12} md={12} sm={12} id='item-password'>
-      <TextField fullWidth
+      <TextField fullWidth type='password'
       id='password' value={this.state.password}
       onChange={this.changePassword}
       label='Password'
