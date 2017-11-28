@@ -79,20 +79,7 @@ class Leftbar extends React.Component{
     })
   }
 
-  // signUpOpen(){
-  //   this.setState({
-  //     open: true
-  //   })
-  // }
-
-  // signUpClose(){
-  //   this.setState({
-  //     open: false
-  //   })
-  // }
-  // 
-  
-handleOpen(){
+  handleOpen(){
     this.setState({open: true});
   };
 
