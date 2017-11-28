@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles'
 import { green } from 'material-ui/colors'
-import Experiences from "./pages/Experience";
+import Notches from "./pages/Notch";
 import Nav from "./components/Nav";
-import Leftbar from './pages/Experience/Leftbar'
+import Leftbar from './pages/Notch/Leftbar'
 
 const theme = createMuiTheme({
   palette: {
@@ -23,9 +23,9 @@ const App = () =>
   <Router>
     <MuiThemeProvider theme={theme} >
       <Switch>
-        <Route exact path="/" component={Experiences} />
+        <Route exact path="/" component={Notches} />
         <Route exact path='/leftbar' component={Leftbar} />
-        <Route exact path="/search" component={Experiences} />
+        <Route exact path="/search" component={Notches} />
       </Switch>
     </MuiThemeProvider>
   </Router>;

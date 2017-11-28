@@ -3,7 +3,7 @@ let axios = require('axios');
 let bcrypt = require('bcrypt');
 
 let User = require('./user.js');
-let experience = require('./experience.js');
+let notch = require('./notch.js');
 
 let key = 'AIzaSyDM80HdqN8I7OZaOY9B8MUjFa3kguMhB_E';
 
@@ -120,10 +120,10 @@ module.exports = {
         });
     },
 
-    newExperience: function (req, res) {
+    newNotch: function (req, res) {
         // console.log(req.body);
         //let categories = req.body.category.split('|');
-        let Experience = {
+        let notch = {
             title:req.body.title,
             category:req.body.category,
             userId:req.body.userId,
@@ -133,8 +133,8 @@ module.exports = {
             img:req.body.img
 
         }
-        // console.log(Experience);
-        experience.create(Experience).then(data => {
+        // console.log(notch);
+        notch.create(notch).then(data => {
             // console.log(data);
             res.send('success');
         }).catch(err => {
@@ -143,9 +143,9 @@ module.exports = {
         })
     },
 
-    getExperiences: function (req, res) {
+    getNotches: function (req, res) {
         // console.log(req.body);
-        // console.log('finding Experiencees');
+        // console.log('finding notches');
         let lng = req.body.lng;
         let lat = req.body.lat;
         if (req.body.category != 'All') {
@@ -156,7 +156,7 @@ module.exports = {
             var parent = { $exists: true }
             var child = { $exists: true }
         }
-        experience.find({
+        notch.find({
             "geometry": {
                 $near: {
                     $geometry: { type: "Point", coordinates: [lng, lat] },
@@ -167,7 +167,7 @@ module.exports = {
             "properties.category_child": child
         }
         ).then(data => {
-            // console.log('found Experiencees');
+            // console.log('found notches');
             // console.log(data);
             res.send(data);
         }).catch(err => {
@@ -177,7 +177,7 @@ module.exports = {
 
     findOne: function (req, res) {
         // console.log(req.body);
-        experience.findById(req.body.id, function (err, data) {
+        notch.findById(req.body.id, function (err, data) {
             if (err) {
                 console.log(err);
                 res.send('unsuccessful');
@@ -189,21 +189,21 @@ module.exports = {
         })
     },
 
-    userExperiences: function(req, res) {
+    userNotches: function(req, res) {
         console.log(req.body);
-        experience.find({"userId": req.body.userId}, function(err, data) {
+        notch.find({"userId": req.body.userId}, function(err, data) {
             if (err) {
                 console.log(err);
             } else {
-                console.log('user Experiences');
+                console.log('user Notches');
                 console.log(data);
                 res.send(data);
             }
         })
     },
 
-    deleteExperience: function(req, res) {
-        experience.findByIdAndRemove(req.body.id, function(err, data) {
+    deleteNotch: function(req, res) {
+        notch.findByIdAndRemove(req.body.id, function(err, data) {
             if (err) {
                 console.log(err);
             } else {

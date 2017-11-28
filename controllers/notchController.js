@@ -22,14 +22,14 @@ router.post('/existinguser', actions.existingUser);
 // Accepts login information from new users, checks if the username exists, and saves the user if unique
 router.post('/newuser', actions.newUser);
 
-router.post('/newExperience', actions.newExperience);
+router.post('/newNotch', actions.newNotch);
 
-router.post('/getExperiences', actions.getExperiences);
+router.post('/getNotches', actions.getNotches);
 
 router.post('/findone', actions.findOne);
 
-router.post('/userExperiences', actions.userExperiences);
+router.post('/userNotches', actions.userNotches);
 
-router.post('/deleteExperience', actions.deleteExperience);
+router.post('/deleteNotch', actions.deleteNotch);
 
 module.exports = router;

@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 var path = require("path");
 const app = express();
-let routes = require('./controllers/experienceController.js');
+let routes = require('./controllers/notchController.js');
 const PORT = process.env.PORT || 3001;
 
 // Configure body parser for AJAX requests
