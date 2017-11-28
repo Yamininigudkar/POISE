@@ -12,6 +12,9 @@ export default {
 	},
 	userSignUp: function(userData) {
 			return axios.post("/newuser",userData)
+	},
+	addNotch: function(notchData){
+		return axios.post("/newNotch", notchData)
 	}
 
 };

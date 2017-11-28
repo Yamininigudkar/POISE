@@ -8,6 +8,7 @@ import { FormControl } from 'material-ui/Form'
 import { MenuItem } from 'material-ui/Menu'
 import { Clear } from 'material-ui-icons'
 import '../../styles/rightbar.css'
+import API from '../../utils/API';
 
 class AddNotch extends React.Component{
 
@@ -16,11 +17,15 @@ class AddNotch extends React.Component{
     this.changeCategory = this.changeCategory.bind(this)
     this.changeLatitude = this.changeLatitude.bind(this)
     this.changeLongitude = this.changeLongitude.bind(this)
+    this.changeTitle = this.changeTitle.bind(this)
+    this.changeImage = this.changeImage.bind(this)
+    this.changeDescription = this.changeDescription.bind(this)
     this.addNotch = this.addNotch.bind(this)
     this.state = {
       category: 'first',
-      headline: '',
-      experience: ''
+      title: '',
+      description: '',
+      img:''
     }
   }
 
@@ -41,9 +46,41 @@ class AddNotch extends React.Component{
       longitude: event.target.value
     })
   }
+  changeImage(event){
+    this.setState({
+      img: event.target.value
+    })
+  }
+  changeTitle(event){
+    this.setState({
+      title: event.target.value
+    })
+  }
+  changeDescription(event){
+    this.setState({
+      description: event.target.value
+    })
+  }
 
   addNotch(){
-    alert('notch added')
+    const notchData = {
+      title:this.state.title,
+      category:this.state.category,
+      userId:"5a1daab504f75641fc1af274",
+      description:this.state.description,
+      latitude:this.state.latitude,
+      longitude:this.state.longitude,
+      img:this.state.img
+
+    }
+    API.addNotch(notchData)
+    .then(res => {
+        console.log("Response",res)
+        
+    })
+      .catch(err => console.log(err));
+    
+    
   }
 
   render(){
@@ -62,6 +99,7 @@ class AddNotch extends React.Component{
             <Grid item lg={12} md={12} sm={12} >
               <Divider />
             </Grid>
+
             <Grid item lg={6} md={6} sm={6} >
               <Typography component='h3' type='body'>
                 Category
@@ -102,8 +140,8 @@ class AddNotch extends React.Component{
               <Divider />
             </Grid>
             <Grid item lg={12} md={12} sm={12} >
-              <TextField  fullWidth id='headline' value={this.state.headline}
-                onChange={this.changeHeadline} label='headline' 
+              <TextField  fullWidth id='Title' value={this.state.title}
+                onChange={this.changeTitle} label='Title' 
               />
             </Grid>
             <Grid item lg={12} md={12} sm={12} >
@@ -111,8 +149,15 @@ class AddNotch extends React.Component{
             </Grid>
             <Grid item lg={12} md={12} sm={12} >
               <TextField multiline fullWidth
-                id='experience' value={this.state.experience}
-                onChange={this.changeExperience} label='experience'
+                id='experience' value={this.state.description}
+                onChange={this.changeDescription} label='Description'
+                rows={3}
+              />
+            </Grid>
+            <Grid item lg={12} md={12} sm={12} >
+              <TextField fullWidth
+                id='image' value={this.state.image}
+                onChange={this.changeImage} label='image'
                 rows={3}
               />
             </Grid>

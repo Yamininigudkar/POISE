@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 var path = require("path");
+var session = require('express-session');
 const app = express();
 let routes = require('./controllers/notchController.js');
 const PORT = process.env.PORT || 3001;
@@ -11,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("client/build"));
+app.use(session({ secret: 'poise', cookie: { maxAge: 6000000 }}))
 
 //Setting a static path.
 // app.use(express.static(path.join((__dirname, "./public"))));

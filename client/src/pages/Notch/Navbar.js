@@ -27,6 +27,7 @@ class Navbar extends React.Component{
               </Avatar>
             </Grid>
             <Grid item lg={10} md={10} sm={10} >
+              
               <SearchNotches/>
             </Grid>
             <Grid item lg={2} md={2} sm={2} > </Grid>

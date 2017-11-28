@@ -1,13 +1,22 @@
 let bodyParser = require('body-parser');
 let axios = require('axios');
 let bcrypt = require('bcrypt');
+var session = require('express-session');
 
 let User = require('./user.js');
-let notch = require('./notch.js');
+let Notch = require('./notch.js');
 
 let key = 'AIzaSyDM80HdqN8I7OZaOY9B8MUjFa3kguMhB_E';
 
 module.exports = {
+
+    // axios.use(session({ secret: 'ishare', cookie: { maxAge: 6000000 }}))
+
+    // userLoggedin: function(req,res){
+
+    // }
+
+
 
     autocomplete: function (req, res) {
         // console.log(req.body);
@@ -90,7 +99,7 @@ module.exports = {
     },
 
     newUser: function (req, res) {
-        // console.log(req.body);
+        console.log(req);
         User.findOne({ 'username': req.body.username }, function (err, user) {
             if (err) {
                 console.log(err);
@@ -136,7 +145,7 @@ module.exports = {
 
         }
         // console.log(notch);
-        notch.create(notch).then(data => {
+        Notch.create(notch).then(data => {
             // console.log(data);
             res.send('success');
         }).catch(err => {
@@ -158,7 +167,7 @@ module.exports = {
             var parent = { $exists: true }
             var child = { $exists: true }
         }
-        notch.find({
+        Notch.find({
             "geometry": {
                 $near: {
                     $geometry: { type: "Point", coordinates: [lng, lat] },
@@ -179,7 +188,7 @@ module.exports = {
 
     findOne: function (req, res) {
         // console.log(req.body);
-        notch.findById(req.body.id, function (err, data) {
+        Notch.findById(req.body.id, function (err, data) {
             if (err) {
                 console.log(err);
                 res.send('unsuccessful');
@@ -193,7 +202,7 @@ module.exports = {
 
     userNotches: function(req, res) {
         console.log(req.body);
-        notch.find({"userId": req.body.userId}, function(err, data) {
+        Notch.find({"userId": req.body.userId}, function(err, data) {
             if (err) {
                 console.log(err);
             } else {
@@ -205,7 +214,7 @@ module.exports = {
     },
 
     deleteNotch: function(req, res) {
-        notch.findByIdAndRemove(req.body.id, function(err, data) {
+        Notch.findByIdAndRemove(req.body.id, function(err, data) {
             if (err) {
                 console.log(err);
             } else {

@@ -2,6 +2,7 @@ let express = require('express');
 let router = new express.Router();
 let path = require('path');
 let actions = require('../models/actions.js');
+var session = require('express-session');
 
 //Routes
 router.get('/', function (req, res) {

@@ -12,10 +12,9 @@ let userSchema = new Schema({
         }
     },
     password: String,
-    zipcode: String,
     created: {
-        type: Date,
-        default: Date.now
+    type: Date,
+    default: Date.now
     }
 });
 

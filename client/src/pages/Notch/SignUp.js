@@ -25,6 +25,7 @@ class SignUp extends React.Component{
       category: 'first',
       firstName: '',
       lastName: '',
+      username:'',
       password: '',
       confirmPassword:''
     }
@@ -49,7 +50,7 @@ class SignUp extends React.Component{
   }
   changeuserName(event){
     this.setState({
-      userName: event.target.value
+      username: event.target.value
     })
   }
   changePassword(event){
@@ -74,10 +75,14 @@ class SignUp extends React.Component{
       lastName : this.state.lastName,
       username : this.state.username,
       password : this.state.password
+
     }
 
       API.userSignUp(userData)
-      .then(res => console.log("Response",res))
+      .then(res => {
+        console.log("Response",res)
+        
+    })
       .catch(err => console.log(err));
     
     }else {
