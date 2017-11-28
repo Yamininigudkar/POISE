@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.box,
+button {
+  font-family: 'Open Sans', sans-serif;
+  border: 1px solid red;
+  border-radius: 3px;
+  padding: .5rem;
+  margin: .15rem;
+/*   float: left; */
+  background-color: rgba(0, 20, 50, 0.05);
+}
+
+.box{
+  background-color:rgb(209, 72, 54);
+}
+
+h3{
+  color:white;
+  font-size: 20px;
+}
+
+.btn-all {
+  background-color: #37a000;
+  color: white;
+}
+
+.btn-Animals {
+  background-color: #37a000;
+  color: white;
+}
+
+.btn-Art {
+  background-color: #37a000;
+  color: white;
+}
+
+.btn-Others{
+  background-color: #37a000;
+  color: white;
+}
+
+.btn-Outdoor {
+  background-color: #37a000;
+  color: white;
+}
+
+.btn-Shows{
+  background-color: #37a000;
+  color: white;
+}
+
+.btn-Sports{
+  background-color: #37a000;
+  color: white;
+}
+
+.btn-entertainment{
+  background-color: #37a000;
+  color: white;
+}
+
+.btn-lifestyle{
+  background-color: #37a000;
+  color: white;
+}
+
+
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.flex-col {
+   display: flex;
+   flex-direction: column;
+/*    align-items: flex-start; */
+/*    justify-content: center; */
+}
+
+.flex-spread {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
