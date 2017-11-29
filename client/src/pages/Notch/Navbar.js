@@ -28,7 +28,7 @@ class Navbar extends React.Component{
             </Grid>
             <Grid item lg={10} md={10} sm={10} >
               
-              <SearchNotches/>
+              <Google id = 'search'/>
             </Grid>
             <Grid item lg={2} md={2} sm={2} > </Grid>
           </Grid>

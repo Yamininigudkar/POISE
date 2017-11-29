@@ -6,7 +6,7 @@
 .box,
 button {
   font-family: 'Open Sans', sans-serif;
-  border: 1px solid red;
+  border: 1px solid green;
   border-radius: 3px;
   padding: .5rem;
   margin: .15rem;
@@ -15,7 +15,7 @@ button {
 }
 
 .box{
-  background-color:rgb(209, 72, 54);
+  background-color:skyblue;
 }
 
 h3{
@@ -24,47 +24,47 @@ h3{
 }
 
 .btn-all {
-  background-color: #37a000;
+  background-color:#0561F9;
   color: white;
 }
 
 .btn-Animals {
-  background-color: #37a000;
+  background-color:#0561F9;
   color: white;
 }
 
 .btn-Art {
-  background-color: #37a000;
+  background-color:#0561F9;
   color: white;
 }
 
 .btn-Others{
-  background-color: #37a000;
+  background-color:#0561F9;
   color: white;
 }
 
 .btn-Outdoor {
-  background-color: #37a000;
+  background-color:#0561F9;
   color: white;
 }
 
 .btn-Shows{
-  background-color: #37a000;
+  background-color:#0561F9;
   color: white;
 }
 
 .btn-Sports{
-  background-color: #37a000;
+  background-color:#0561F9;
   color: white;
 }
 
 .btn-entertainment{
-  background-color: #37a000;
+  background-color:#0561F9;
   color: white;
 }
 
 .btn-lifestyle{
-  background-color: #37a000;
+  background-color:#0561F9;
   color: white;
 }
 

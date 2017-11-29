@@ -84,7 +84,7 @@ class Notch extends React.PureComponent {
                 isMarkerShown={this.state.isMarkerShown}
                 onMarkerClick={this.handleMarkerClick}
               />
-              <Google/>
+              
             </Grid>
           </Grid>
         </Grid>

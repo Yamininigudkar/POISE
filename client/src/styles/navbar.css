@@ -1,11 +1,40 @@
 #appbar{
-  padding-top: 10px;
-  padding-left: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
 }
 
 #avatar-logo{
-  width: 70px;
-  height: 60px;
-  background-color: #37a000;
-  border-radius: 50%;
+	width: 70px;
+	height: 60px;
+	background-color: #0561F9;
+	border-radius: 50%;
+}
+
+.form-group{
+	/*margin-left: 300px;
+	margin-right: 300px;*/
+	float:left;
+	margin: 0 20px 0 0;
+	float:top;
+
+
+	
+}
+
+.form-control{
+	float:right;
+	margin: 0 20px 0 0;
+
+}
+
+/*#search{
+margin-top: -20px;
+margin-left: -50px;
+}*/
+
+#google{
+
+margin-top:-30px;	
+margin-left: -20px;
+
 }
