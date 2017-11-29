@@ -18,12 +18,13 @@
 	float:top;
 
 
+
 	
 }
 
 .form-control{
 	float:right;
-	margin: 0 20px 0 0;
+	margin top:80px;
 
 }
 
@@ -31,6 +32,16 @@
 margin-top: -20px;
 margin-left: -50px;
 }*/
+
+#description{
+	float:right;
+	margin-top:-75px; 
+}
+
+#google_places{
+	width: 90px;
+	height: 50px;
+}
 
 #google{
 
