@@ -66,7 +66,6 @@ class AddNotch extends React.Component{
     const notchData = {
       title:this.state.title,
       category:this.state.category,
-      userId:"5a1daab504f75641fc1af274",
       description:this.state.description,
       latitude:this.state.latitude,
       longitude:this.state.longitude,

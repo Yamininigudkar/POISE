@@ -22,9 +22,9 @@ class Navbar extends React.Component{
         <Toolbar disableGutters>
           <Grid container>
             <Grid item lg={2} md={2} sm={2} >
-              <Avatar aria-label='Recipe' id='avatar-logo'>
-                P
-              </Avatar>
+              <img  id='avatar-logo' src="http://www.heliheyn.de/Maps/Video/TransparentGlobe.gif" />
+                
+              
             </Grid>
             <Grid item lg={10} md={10} sm={10} >
               

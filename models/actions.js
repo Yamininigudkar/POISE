@@ -10,13 +10,7 @@ let key = 'AIzaSyDM80HdqN8I7OZaOY9B8MUjFa3kguMhB_E';
 
 module.exports = {
 
-    // axios.use(session({ secret: 'ishare', cookie: { maxAge: 6000000 }}))
-
-    // userLoggedin: function(req,res){
-
-    // }
-
-
+    
 
     autocomplete: function (req, res) {
         // console.log(req.body);
@@ -78,25 +72,27 @@ module.exports = {
         })
     },
 
-    existingUser: function (req, res) {
-        // console.log(req.body);
-        User.findOne({ 'username': req.body.username }, function (err, user) {
-            if (err) {
-                console.log(err);
-                res.send('unsuccessful');
-            } else if (user == null) {
-                // console.log('no user');
-                res.send('unsuccessful');
-            } else {
-                // console.log(user);
-                var savedHash = user.password;
-                bcrypt.compare(req.body.password, savedHash, function (err, status) {
-                    // console.log(status);
-                    status === true ? res.json('success') : res.json('unsuccessful');
-                });
-            }
-        })
-    },
+    // existingUser: function (req, res) {
+    //     // console.log(req.body);
+    //     User.findOne({ 'username': req.body.username }, function (err, user) {
+    //         if (err) {
+    //             console.log(err);
+    //             res.send('unsuccessful');
+    //         } else if (user == null) {
+    //             // console.log('no user');
+    //             res.send('unsuccessful');
+    //         } else {
+    //             // console.log(user);
+    //             var savedHash = user.password;
+    //             bcrypt.compare(req.body.password, savedHash, function (err, status) {
+    //                 // console.log(status);
+    //                 status === true ? res.json('success') : res.json('unsuccessful');
+    //                 req.session.userId = user._id
+    //                 console.log(req.session.userId)
+    //             });
+    //         }
+    //     })
+    // },
 
     newUser: function (req, res) {
         console.log(req);
@@ -132,12 +128,12 @@ module.exports = {
     },
 
     newNotch: function (req, res) {
-        // console.log(req.body);
+         console.log(req.session.userId);
         //let categories = req.body.category.split('|');
         let notch = {
             title:req.body.title,
             category:req.body.category,
-            userId:req.body.userId,
+            userId:req.session.userId,
             description:req.body.description,
             latitude:req.body.latitude,
             longitude:req.body.longitude,

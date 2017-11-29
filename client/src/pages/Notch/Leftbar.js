@@ -102,7 +102,7 @@ handleOpen(){
       <Grid item lg={12} md={12} sm={12} id='item-logo' >
       <center>
       <Typography type='heading' component='h1' color='primary'>
-      POISE
+      Notch
       </Typography>
       </center>
       </Grid>
