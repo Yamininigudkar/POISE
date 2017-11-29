@@ -127,7 +127,6 @@ class Google extends React.Component {
         this.placeDetails(id, false);
     }
 
-
     placeDetails(id, city) {
         axios.post('/placedetails', { id: id }).then(data => {
             let location = data.data.result.geometry.location;
@@ -139,33 +138,10 @@ class Google extends React.Component {
         })
     }
 
-        render() {
-            return (
-                <div id='google'>
-                <div id='search' >
-                <div className="form-group search-child" >
-                <label htmlFor="keyword">Keyword</label>
-                <input type="text" className="form-control" id="keyword" placeholder="Find a place" onKeyPress={this.setPlace} />
-                </div>
-                <div className="form-group search-child">
-                <label htmlFor="autocomplete">City</label>
-                <input className="form-control" id="autocomplete" list="browsers" name="myBrowser" placeholder='South Park, CO, United States' onChange={this.setCity} />
-                
-                <datalist id="browsers">
-
-                {this.showAutocomplete()}
-                
-                </datalist>
-                <span id = 'description'>Does it already exist?Save time with <img  id='google_places' src="http://www.ussoftwareltd.com/images/google_map_pic/google_places/google-places-logo-png.jpg" /></span>
-                </div>
-
-
     render() {
         return (
             <div id='google'>
-                <h4>Search&nbsp;&nbsp;<img /></h4>
-                <span className="description">Does it already exist? Save time with Google Places</span>                                
-                <hr />
+                
                 <div id='search'>
                     <div className="form-group search-child">
                         <label htmlFor="keyword">Keyword</label>
@@ -177,16 +153,12 @@ class Google extends React.Component {
                         <datalist id="browsers">
                             {this.showAutocomplete()}
                         </datalist>
+                        <span id = 'description'>Does it already exist?Save time with <img  id='google_places' src="http://www.ussoftwareltd.com/images/google_map_pic/google_places/google-places-logo-png.jpg" /></span>
                     </div>
                 </div>
-
                 <ul className='list-group' id='results'>
                     {this.showCity()}
                     
-                
-                <ul className='list-group' id='results'>
-                {this.showCity()}
-                
                 </ul>
             </div>
         )
