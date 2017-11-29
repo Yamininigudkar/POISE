@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
 import GoogleMapReact from 'google-map-react';
 import {compose, withProps} from 'recompose';
-import ArticleBtn from '../../components/ArticleBtn';
-import Jumbotron from '../../components/Jumbotron';
 import API from '../../utils/API';
 import {Link} from 'react-router-dom';
-import {Col, Row, Container} from '../../components/Grid';
-import {List, ListItem} from '../../components/List';
-import {Input, FormBtn} from '../../components/Form';
 import Google from './Google';
 import { Grid } from 'material-ui'
 import Leftbar from './Leftbar'
@@ -15,36 +10,9 @@ import AddNotch from './AddNotch'
 import NotchesList from './NotchesList'
 import Navbar from './Navbar'
 import '../../styles/Notch.css'
-
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker,
-} from 'react-google-maps';
-
-const googleMapqueryUrl = "https:/"+ "/maps.googleapis.com/maps/api/js?key=AIzaSyDM80HdqN8I7OZaOY9B8MUjFa3kguMhB_E&callback=initMap"
+import MyMapComponent from './Map'
 
 
-const MyMapComponent = compose(
-  withProps({
-    googleMapURL:googleMapqueryUrl,
-    loadingElement: <div style={{height: `100%`}} />,
-    containerElement: <div style={{height: `400px`}} />,
-    mapElement: <div style={{height: `100%`}} />,
-  }),
-  withScriptjs,
-  withGoogleMap,
-)(props => (
-  <GoogleMap defaultZoom={8} defaultCenter={{lat: -34.397, lng: 150.644}}>
-    {props.isMarkerShown && (
-      <Marker
-        position={{lat: -34.397, lng: 150.644}}
-        onClick={props.onMarkerClick}
-      />
-    )}
-  </GoogleMap>
-));
 
 
 class Notch extends React.PureComponent {
