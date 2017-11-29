@@ -12,6 +12,7 @@ import Main from './categoryfilter'
 import SignUp from './SignUp'
 import { GoogleLogin } from 'react-google-login' 
 import '../../styles/leftbar.css'
+import API from '../../utils/API';
 
 
 
@@ -52,9 +53,20 @@ class Leftbar extends React.Component{
     })
   }
 
-  login(){
+  login(event){
     console.log('going to login')
+    event.preventDefault()
+     const userData={
+      username : this.state.username,
+      password : this.state.password
+     }
+   console.log("login")
+      console.log(userData)
+     API.userLogin(userData)
+     .then(res => console.log("Response",res))
+     .catch(err => console.log(err));
   }
+  
 
   signup(){
     console.log('going to signup')
