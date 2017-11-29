@@ -88,7 +88,7 @@ class SignUp extends React.Component{
     }else {
       alert("passwords do not match")
     }
-    
+    this.props.handleClose()
 
   }
 

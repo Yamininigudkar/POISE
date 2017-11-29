@@ -56,15 +56,15 @@ class Leftbar extends React.Component{
   login(event){
     console.log('going to login')
     event.preventDefault()
-     const userData={
+    const userData={
       username : this.state.username,
       password : this.state.password
-     }
-   console.log("login")
-      console.log(userData)
-     API.userLogin(userData)
-     .then(res => console.log("Response",res))
-     .catch(err => console.log(err));
+    }
+    console.log("login")
+    console.log(userData)
+    API.userLogin(userData)
+    .then(res => console.log("Response",res))
+    .catch(err => console.log(err));
   }
   
 
@@ -91,14 +91,14 @@ class Leftbar extends React.Component{
   }
 
   closeAddNotch(){
-    this.setstate({
+    this.setState({
       addNotchOpened: false
     })
   }
 
   
   
-handleOpen(){
+  handleOpen(){
     this.setState({open: true});
   };
 
@@ -130,7 +130,7 @@ handleOpen(){
       </Grid>
       <Grid item lg={12} md={12} sm={12} id='item-password'>
       <TextField fullWidth
-      id='password' value={this.state.password}
+      id='password' type='password' value={this.state.password}
       onChange={this.changePassword}
       label='Password'
       />
@@ -146,15 +146,10 @@ handleOpen(){
       Signup
       </Button>
       <Dialog
-          
-          
-          open={this.state.open}
-          onRequestClose={this.handleClose} id='SignUp-Modal'>
-          <SignUp/>
-
-         
-        </Dialog>
-      
+      open={this.state.open}
+      onRequestClose={this.handleClose} id='SignUp-Modal'>
+      <SignUp handleclose={this.handleClose}/>
+      </Dialog>
       </Grid>
       <Grid item lg={12} md={12} sm={12} >
       <Typography component='p' color='primary'>
@@ -205,7 +200,7 @@ handleOpen(){
       </Button>
       <Dialog 
       onRequestClose={this.closeAddNotch} open={this.state.addNotchOpened} id='add-notch-dialog'>
-      <AddNotch />
+      <AddNotch closeAddNotch={this.closeAddNotch} />
       </Dialog>
       <Main/>
       

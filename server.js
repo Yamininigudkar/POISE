@@ -12,10 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("client/build"));
+app.use(session({ secret: 'poise', cookie: { maxAge: 6000000 }}))
 
-
-//Setting a static path.
-// app.use(express.static(path.join((__dirname, "./public"))));
 
 //Requiring the routes from the controllers.js file
 app.use('/', routes);

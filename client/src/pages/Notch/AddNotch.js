@@ -78,6 +78,7 @@ class AddNotch extends React.Component{
         
     })
       .catch(err => console.log(err));
+      this.props.closeAddNotch()
     
     
   }

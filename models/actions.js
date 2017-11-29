@@ -127,28 +127,7 @@ module.exports = {
         });
     },
 
-    newNotch: function (req, res) {
-         console.log(req.session.userId);
-        //let categories = req.body.category.split('|');
-        let notch = {
-            title:req.body.title,
-            category:req.body.category,
-            userId:req.session.userId,
-            description:req.body.description,
-            latitude:req.body.latitude,
-            longitude:req.body.longitude,
-            img:req.body.img
-
-        }
-        // console.log(notch);
-        Notch.create(notch).then(data => {
-            // console.log(data);
-            res.send('success');
-        }).catch(err => {
-            console.log(err);
-            res.send('unsuccessful');
-        })
-    },
+    
 
     getNotches: function (req, res) {
         // console.log(req.body);

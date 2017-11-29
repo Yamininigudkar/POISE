@@ -7,12 +7,13 @@ let User = require('../models/user.js');
 let bcrypt = require('bcrypt');
 let Notch = require('../models/notch.js');
 
-router.use(session({ secret: 'poise', cookie: { maxAge: 6000000 }}))
+
 
 //Routes
 router.get('/', function (req, res) {
     res.send(path.join(__dirname + './public/index.html'));
 })
+
 
 router.post('/autocomplete', actions.autocomplete);
 
@@ -36,9 +37,13 @@ router.post('/existinguser', function(req,res){
                 var savedHash = user.password;
                 bcrypt.compare(req.body.password, savedHash, function (err, status) {
                     // console.log(status);
-                    status === true ? res.json(user._id) : res.json('unsuccessful');
-                    req.session.userId = user._id
-                    console.log(req.session.userId)
+                    if(status === true){
+                        req.session.userId = user._id
+                        console.log(req.session.userId)
+                        res.json(user)
+                    } else{
+                        res.json('unsuccessful');
+                    } 
                 });
             }
         })
