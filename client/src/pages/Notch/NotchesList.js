@@ -61,7 +61,7 @@ class NotchesList extends React.Component{
                               }
                               title={notch.user.name.toUpperCase()}
                               subheader={notch.location[0] + " " + notch.location[1]}
-                              style={{backgroundColor: '#37a000'}}
+                              style={{backgroundColor: 'skyblue'}}
                             />
                             <CardContent>
                               <Typography component='p'>

@@ -63,13 +63,13 @@ class Main extends React.Component {
 
 // data
 const PRODUCTS = [
-  { category: "Outdoor" },
-  { category: "Sports" },
-  { category: "entertainment"},
-  { category: "Shows" },
+  
   { category: "Art" },
-  { category: "Animals"},
-  { category: "lifestyle"},
+  { category: "Outdoor"},
+  { category: "Shows" },
+  { category: "Sports" },
+  { category: "Entertainment"},
+  { category: "Lifestyle"},
   { category: "Others"},
 ];
 
@@ -79,7 +79,7 @@ const PRODUCT_CATEGORIES = PRODUCTS.map(prod => prod.category).filter(
   uniqueItems
 );
 
-PRODUCT_CATEGORIES.push("all");
+PRODUCT_CATEGORIES.push("All");
 PRODUCT_CATEGORIES.sort();
 
 export default Main 

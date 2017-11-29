@@ -5,6 +5,7 @@ import {
 } from 'material-ui'
 import SearchNotches from './SearchNotches'
 import Google from './Google';
+import googleplaces from './googleplaces';
 import '../../styles/navbar.css'
 
 class Navbar extends React.Component{
@@ -28,7 +29,7 @@ class Navbar extends React.Component{
             </Grid>
             <Grid item lg={10} md={10} sm={10} >
               
-              <Google id = 'search'/>
+              <SearchNotches />
             </Grid>
             <Grid item lg={2} md={2} sm={2} > </Grid>
           </Grid>

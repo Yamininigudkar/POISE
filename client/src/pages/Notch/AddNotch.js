@@ -22,7 +22,7 @@ class AddNotch extends React.Component{
     this.changeDescription = this.changeDescription.bind(this)
     this.addNotch = this.addNotch.bind(this)
     this.state = {
-      category: 'first',
+      category: 'All',
       title: '',
       description: '',
       img:''
@@ -110,10 +110,15 @@ class AddNotch extends React.Component{
                   value={this.state.category}
                   onChange={this.changeCategory}
                   id='category' >
-
-                  <MenuItem value='first' onClick={this.changeCategory}>First</MenuItem>
-                  <MenuItem value='second' onClick={this.changeCategory}>Second</MenuItem>
-                  <MenuItem value='third' onClick={this.changeCategory}>Third</MenuItem>
+                  
+                  <MenuItem value='All' onClick={this.changeCategory}>All</MenuItem>
+                  <MenuItem value='Art' onClick={this.changeCategory}>Art</MenuItem>
+                  <MenuItem value='Outdoor' onClick={this.changeCategory}>Outdoor</MenuItem>
+                  <MenuItem value='Shows' onClick={this.changeCategory}>Shows</MenuItem>
+                  <MenuItem value='Sports' onClick={this.changeCategory}>Sports</MenuItem>
+                  <MenuItem value='Entertainment' onClick={this.changeCategory}>Entertainment</MenuItem>
+                  <MenuItem value='Lifestyle' onClick={this.changeCategory}>Lifestyle</MenuItem>
+                  <MenuItem value='Others' onClick={this.changeCategory}>Others</MenuItem>
                 </Select>
               </FormControl>
 
