@@ -2,11 +2,12 @@ import React from 'react'
 
 import { 
   Grid, Typography, Select,
-  Divider, TextField, Button
+  Divider, TextField, Button, classes
 } from 'material-ui'
 import { FormControl } from 'material-ui/Form'
 import { MenuItem } from 'material-ui/Menu'
-import { Clear } from 'material-ui-icons'
+import { Clear, } from 'material-ui-icons'
+import FileUpload from 'material-ui-icons/FileUpload';
 import '../../styles/rightbar.css'
 import API from '../../utils/API';
 
@@ -164,7 +165,7 @@ class AddNotch extends React.Component{
                 id='image' value={this.state.image}
                 onChange={this.changeImage} label='image'
                 rows={3}
-              />
+              ></TextField>
             </Grid>
             <Grid item lg={12} md={12} sm={12} >
               <center>

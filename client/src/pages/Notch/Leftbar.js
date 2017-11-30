@@ -123,18 +123,9 @@ class Leftbar extends React.Component{
       </Grid>
       </Grid>
       </Dialog>
-      </Grid>
-      <Grid item lg={12} md={12} sm={12} >
-      <Button onClick={this.openAddNotch} color='primary'>
-      Add new notch
-      </Button>
-      <Dialog 
-      onRequestClose={this.closeAddNotch} open={this.state.addNotchOpened} id='add-notch-dialog'>
-      <AddNotch closeAddNotch={this.closeAddNotch} />
-      </Dialog>
       <Main/>
-      
       </Grid>
+      
       </Grid>
       </Paper>
       )
