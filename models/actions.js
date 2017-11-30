@@ -72,27 +72,7 @@ module.exports = {
         })
     },
 
-    // existingUser: function (req, res) {
-    //     // console.log(req.body);
-    //     User.findOne({ 'username': req.body.username }, function (err, user) {
-    //         if (err) {
-    //             console.log(err);
-    //             res.send('unsuccessful');
-    //         } else if (user == null) {
-    //             // console.log('no user');
-    //             res.send('unsuccessful');
-    //         } else {
-    //             // console.log(user);
-    //             var savedHash = user.password;
-    //             bcrypt.compare(req.body.password, savedHash, function (err, status) {
-    //                 // console.log(status);
-    //                 status === true ? res.json('success') : res.json('unsuccessful');
-    //                 req.session.userId = user._id
-    //                 console.log(req.session.userId)
-    //             });
-    //         }
-    //     })
-    // },
+    
 
     newUser: function (req, res) {
         console.log(req);
@@ -177,7 +157,7 @@ module.exports = {
 
     userNotches: function(req, res) {
         console.log(req.body);
-        Notch.find({"userId": req.body.userId}, function(err, data) {
+        Notch.find({"userId": req.session.userId}, function(err, data) {
             if (err) {
                 console.log(err);
             } else {

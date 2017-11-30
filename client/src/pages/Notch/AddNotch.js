@@ -11,14 +11,18 @@ import FileUpload from 'material-ui-icons/FileUpload';
 import '../../styles/rightbar.css'
 import API from '../../utils/API';
 
+
+
+
 class AddNotch extends React.Component{
 
   constructor(props){
     super(props)
     this.changeCategory = this.changeCategory.bind(this)
-    this.changeLatitude = this.changeLatitude.bind(this)
+     this.changeLatitude = this.changeLatitude.bind(this)
     this.changeLongitude = this.changeLongitude.bind(this)
     this.changeTitle = this.changeTitle.bind(this)
+   //this.geolocation = this.geolocation.bind(this)
     this.changeImage = this.changeImage.bind(this)
     this.changeDescription = this.changeDescription.bind(this)
     this.addNotch = this.addNotch.bind(this)
@@ -26,9 +30,21 @@ class AddNotch extends React.Component{
       category: 'All',
       title: '',
       description: '',
+      latitude:'',
+      longitude:'',
       img:''
     }
   }
+
+  componentWillMount(){
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        this.setState({ latitude: position.coords.latitude, longitude: position.coords.longitude});
+      },
+      error => console.log(error)
+    );
+  }
+  
 
   changeCategory(event){
     this.setState({
@@ -36,6 +52,7 @@ class AddNotch extends React.Component{
     })
   }
 
+  
   changeLatitude(event){
     this.setState({
       latitude: event.target.value
@@ -62,6 +79,12 @@ class AddNotch extends React.Component{
       description: event.target.value
     })
   }
+
+
+
+  
+
+
 
   addNotch(){
     const notchData = {
@@ -132,12 +155,12 @@ class AddNotch extends React.Component{
               <Grid container>
                 <Grid item lg={6} md={6} sm={6} >
                   <TextField id='lat' value={this.state.latitude}
-                    fullWidth onChange={this.changeLatitude} label='latitude'
+                     label='latitude'
                   />
                 </Grid>
                 <Grid item lg={6} md={6} sm={6} >
                   <TextField id='lng' value={this.state.longitude}
-                    fullWidth onChange={this.changeLongitude} label='longitude'
+                     label='longitude'
                   />
                 </Grid>
               </Grid>

@@ -18,6 +18,9 @@ export default {
 	},
 	userlogOut: function(){
 		return axios.get('/logout')
+	},
+	getNotches:function(locationData){
+		return axios.post('/getNotches',locationData)
 	}
 
 };
