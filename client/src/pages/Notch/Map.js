@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import GoogleMapReact from 'google-map-react';
 import {compose} from 'recompose';
 
-const googleMapqueryUrl = "https:/"+ "/maps.googleapis.com/maps/api/js?key=AIzaSyDM80HdqN8I7OZaOY9B8MUjFa3kguMhB_E&callback=initMap"
+const googleMapqueryUrl = "https:/"+ "/maps.googleapis.com/maps/api/js?key=AIzaSyA3WHuevwBPW8AzzCgOeZbLBoOWvPi-b3U&callback=initMap"
 const _ = require("lodash");
 const {  withProps, lifecycle } = require("recompose");
 const {
@@ -15,7 +15,7 @@ const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox
 
 const MyMapComponent = compose(
   withProps({
-    googleMapURL: "https:/"+"/maps.googleapis.com/maps/api/js?key=AIzaSyDM80HdqN8I7OZaOY9B8MUjFa3kguMhB_E.exp&libraries=geometry,drawing,places",
+    googleMapURL: "https:/"+"/maps.googleapis.com/maps/api/js?key=AIzaSyA3WHuevwBPW8AzzCgOeZbLBoOWvPi-b3U.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
