@@ -189,7 +189,7 @@ class AddNotch extends React.Component{
                 onChange={this.changeImage} label='image'
                 rows={3}
               ></TextField>
-              <input type="file" accept="image/*" onchange="picChange(event)"/>
+              <input type="file" accept="image/*" onChange={this.changeImage} />
             </Grid>
             <Grid item lg={12} md={12} sm={12} >
               <center>
