@@ -25,11 +25,15 @@ class Login extends React.Component{
 		this.signup = this.signup.bind(this)
 		this.handleOpen = this.handleOpen.bind(this)
 		this.handleClose = this.handleClose.bind(this)
+		this.openAddNotch = this.openAddNotch.bind(this)
+		this.closeAddNotch = this.closeAddNotch.bind(this)
 
 		this.state = {
 			username:''	,
 			loggedIn:false,
-			register:false
+			register:false,
+			firstname:'',
+			lastname:''
 
 		}
 	}
@@ -59,11 +63,17 @@ class Login extends React.Component{
 		API.userLogin(userData)
 		.then(res => 
 		{
-			if(res){
+			if(res.data==='unsuccessful'){
+				
+				alert("incorrect username ot password")
+			} else {
 				console.log("Response",res)
 				alert("logged")
+
 				this.setState({loggedIn:true})
-			} 
+				this.setState({firstname:res.data.firstName})
+				this.setState({lastname:res.data.lastName})
+			}
 		})
 
 		.catch(err => console.log(err));
@@ -93,6 +103,18 @@ class Login extends React.Component{
 		})
 
 	}
+	openAddNotch(){
+		this.setState({
+			addNotchOpened: true
+		})
+	}
+
+	closeAddNotch(){
+		this.setState({
+			addNotchOpened: false
+		})
+	}
+
 
 	showLogin(){
 		if(this.state.loggedIn){
@@ -101,7 +123,7 @@ class Login extends React.Component{
 				<Grid item lg={12} md={12} sm={12} id='item-username'>
 				<center>
 				<Typography type='heading' component='h4' color='primary'>
-				Welcome <span id="username">{this.props.username}</span>
+				Welcome <span id="username">{this.state.firstname}</span><span id="lastname"> {this.state.lastname}</span>
 				</Typography>
 				</center>
 				<Divider />
@@ -112,16 +134,14 @@ class Login extends React.Component{
 				</center>
 				</Grid>
 				<Grid item lg={12} md={12} sm={12} >
-      <Button onClick={this.openAddNotch} color='primary'>
-      Add new notch
-      </Button>
-      <Dialog 
-      onRequestClose={this.closeAddNotch} open={this.state.addNotchOpened} id='add-notch-dialog'>
-      <AddNotch closeAddNotch={this.closeAddNotch} />
-      </Dialog>
-      
-      
-      </Grid>
+				<Button onClick={this.openAddNotch} color='primary'>
+				Add new notch
+				</Button>
+				<Dialog 
+				onRequestClose={this.closeAddNotch} open={this.state.addNotchOpened} id='add-notch-dialog'>
+				<AddNotch closeAddNotch={this.closeAddNotch} />
+				</Dialog>	
+				</Grid>
 				</Grid>
 
 				)
@@ -132,8 +152,6 @@ class Login extends React.Component{
 				<div>Registered</div>
 				)
 		}
-
-
 		else {
 			return(
 				<Grid container>
@@ -164,7 +182,7 @@ class Login extends React.Component{
 				<Dialog
 				open={this.state.open}
 				onRequestClose={this.handleClose} id='SignUp-Modal'>
-				<SignUp handleclose={this.handleClose}/>
+				<SignUp handleClose={this.handleClose}/>
 				</Dialog>
 				</Grid>
 				</Grid>

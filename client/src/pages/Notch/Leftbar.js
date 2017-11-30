@@ -27,8 +27,7 @@ class Leftbar extends React.Component{
     super(props)
     this.openGuide = this.openGuide.bind(this)
     this.closeGuide = this.closeGuide.bind(this)
-    this.openAddNotch = this.openAddNotch.bind(this)
-    this.closeAddNotch = this.closeAddNotch.bind(this)
+    
   
     this.state = {
       
@@ -48,17 +47,7 @@ class Leftbar extends React.Component{
     })
   }
 
-  openAddNotch(){
-    this.setState({
-      addNotchOpened: true
-    })
-  }
-
-  closeAddNotch(){
-    this.setState({
-      addNotchOpened: false
-    })
-  }
+  
 
   
   

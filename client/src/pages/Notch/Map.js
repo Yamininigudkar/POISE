@@ -1,21 +1,18 @@
-import React, {Component} from 'react';
-import GoogleMapReact from 'google-map-react';
-import {compose} from 'recompose';
-
-const googleMapqueryUrl = "https:/"+ "/maps.googleapis.com/maps/api/js?key=AIzaSyA3WHuevwBPW8AzzCgOeZbLBoOWvPi-b3U&callback=initMap"
+import React  from 'react'
 const _ = require("lodash");
-const {  withProps, lifecycle } = require("recompose");
+
+const { compose, withProps, lifecycle } = require("recompose");
 const {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker,google,maps
+  Marker,google
 } = require("react-google-maps");
 const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
 
 const MyMapComponent = compose(
   withProps({
-    googleMapURL: "https:/"+"/maps.googleapis.com/maps/api/js?key=AIzaSyA3WHuevwBPW8AzzCgOeZbLBoOWvPi-b3U.exp&libraries=geometry,drawing,places",
+    googleMapURL: "https:/"+"/maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
@@ -42,9 +39,6 @@ const MyMapComponent = compose(
         onSearchBoxMounted: ref => {
           refs.searchBox = ref;
         },
-        geolocation:()=>{
-
-        },
         onPlacesChanged: () => {
           const places = refs.searchBox.getPlaces();
           const bounds = new google.maps.LatLngBounds();
@@ -65,7 +59,7 @@ const MyMapComponent = compose(
             center: nextCenter,
             markers: nextMarkers,
           });
-          // refs.map.fitBounds(bounds);
+          refs.map.fitBounds(bounds);
         },
       })
     },
@@ -82,7 +76,7 @@ const MyMapComponent = compose(
     <SearchBox
       ref={props.onSearchBoxMounted}
       bounds={props.bounds}
-      //controlPosition={google.maps.ControlPosition.TOP_LEFT}
+      
       onPlacesChanged={props.onPlacesChanged}
     >
       <input
@@ -110,4 +104,5 @@ const MyMapComponent = compose(
 );
 
 
-export default MyMapComponent;
+
+export default MyMapComponent
