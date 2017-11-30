@@ -50,6 +50,11 @@ router.post('/existinguser', function(req,res){
     }
 
 );
+router.get('/logout',function(req,res){
+    res.clearCookie('user_sid')
+    res.json("success")
+    console.log("logout",req.session.userId)
+})
 
 // Accepts login information from new users, checks if the username exists, and saves the user if unique
 router.post('/newuser', actions.newUser);

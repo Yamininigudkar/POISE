@@ -21,6 +21,7 @@ class Login extends React.Component{
 		this.changeUsername = this.changeUsername.bind(this)
 		this.changePassword = this.changePassword.bind(this)
 		this.login = this.login.bind(this)
+		this.logOut = this.logOut.bind(this)
 		this.signup = this.signup.bind(this)
 		this.handleOpen = this.handleOpen.bind(this)
 		this.handleClose = this.handleClose.bind(this)
@@ -81,6 +82,18 @@ class Login extends React.Component{
 		this.setState({open: false});
 	};
 
+	logOut(){
+		API.userlogOut()
+		.then(res =>{
+			console.log(res)
+			console.log("Logout successful")
+			this.setState({loggedIn:false})
+			this.setState({username:""})
+			this.setState({password:""})
+		})
+
+	}
+
 	showLogin(){
 		if(this.state.loggedIn){
 			return(
@@ -91,9 +104,12 @@ class Login extends React.Component{
 				Welcome <span id="username">{this.props.username}</span>
 				</Typography>
 				</center>
-				<Button raised id='logout' color='primary'>
+				<Divider />
+				<center>
+				<Button raised id='logout' onClick={this.logOut} color='primary'>
 				Logout
 				</Button>
+				</center>
 				</Grid>
 				</Grid>
 				)

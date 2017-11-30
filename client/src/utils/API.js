@@ -15,6 +15,9 @@ export default {
 	},
 	addNotch: function(notchData){
 		return axios.post("/newNotch", notchData)
+	},
+	userlogOut: function(){
+		return axios.get('/logout')
 	}
 
 };

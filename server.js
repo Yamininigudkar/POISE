@@ -12,7 +12,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("client/build"));
-app.use(session({ secret: 'poise', cookie: { maxAge: 6000000 }}))
+app.use(session({ 
+	secret: 'poise',
+	key: 'user_sid',
+    resave: false,
+    saveUninitialized: false, cookie: { maxAge: 6000000 }
+}))
 
 
 //Requiring the routes from the controllers.js file
