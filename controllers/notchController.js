@@ -15,13 +15,7 @@ router.get('/', function (req, res) {
 })
 
 
-router.post('/autocomplete', actions.autocomplete);
 
-router.post('/getcoordinates', actions.getCoordinates);
-
-router.post('/googleplaces', actions.googlePlaces);
-
-router.post('/placedetails', actions.placeDetails);
 
 // Receives and authenticates login information from existing users
 router.post('/existinguser', function(req,res){

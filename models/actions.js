@@ -6,74 +6,11 @@ var session = require('express-session');
 let User = require('./user.js');
 let Notch = require('./notch.js');
 
-let key = 'AIzaSyDM80HdqN8I7OZaOY9B8MUjFa3kguMhB_E';
 
 module.exports = {
 
-    
-
-    autocomplete: function (req, res) {
-        // console.log(req.body);
-        let city = req.body.city;
-        let url = 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=' + city + '&types=(cities)&key=' + key;
-        // let url = 'https://api.yelp.com/v3/businesses/search?term=' + req.body + '&location=estes+park&Authorization=Bearer ubaFEKFibK6WH876p2V7lk4nQW8vx9_B6HZPSbrlflrSOsoJb-iR47o5G_psT7xeCtqYVI-Y1OHiv4DNgl59oZpUYEG_eTh_j2PjyfTvdkxg_ixl8jltKBzx5CmoWXYx';
-        // console.log(url);
-        axios.get(url).then(data => {
-            // console.log('axios');
-            res.send(data.data.predictions);
-        });
-    },
-///Still need to figure out geolocation
-/////////////////////////////////////////////////////////////////////////////
-    getGeolocation: function (req, res) {
-        let id = req.body.id;
-        // console.log(id);
-        let url = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDM80HdqN8I7OZaOY9B8MUjFa3kguMhB_E&callback=initMap';
-        axios.get(url).then(data => {
-            // console.log(data.data.result.geometry.location);
-            let location = data.data.result.geometry.location;
-            res.send(location);
-        })
-    },
-
-
-
-    getCoordinates: function (req, res) {
-        let id = req.body.id;
-        // console.log(id);
-        let url = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + id + '&key=' + key;
-        axios.get(url).then(data => {
-            // console.log(data.data.result.geometry.location);
-            let location = data.data.result.geometry.location;
-            res.send(location);
-        })
-    },
-
-    googlePlaces: function (req, res) {
-        // console.log(req.body);
-        let term = req.body.searchTerm;
-        let lat = req.body.latitude;
-        let lng = req.body.longitude;
-        let url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + lat + ',' + lng + '&radius=200000&name=' + term + '&key=' + key;
-        // let url = 'https://api.yelp.com/v3/businesses/search?term=' + req.body + '&location=estes+park&Authorization=Bearer ubaFEKFibK6WH876p2V7lk4nQW8vx9_B6HZPSbrlflrSOsoJb-iR47o5G_psT7xeCtqYVI-Y1OHiv4DNgl59oZpUYEG_eTh_j2PjyfTvdkxg_ixl8jltKBzx5CmoWXYx';
-        axios.get(url).then(data => {
-            // console.log(data.data);
-            res.send(data.data);
-        });
-    },
-
-    placeDetails: function (req, res) {
-        // console.log(req.body);
-        let id = req.body.id;
-        let url = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + id + '&key=' + key;
-        axios.get(url).then(data => {
-            // console.log(data.data);
-            res.send(data.data);
-        })
-    },
-
-    
-
+  
+   
     newUser: function (req, res) {
         console.log(req);
         User.findOne({ 'username': req.body.username }, function (err, user) {
