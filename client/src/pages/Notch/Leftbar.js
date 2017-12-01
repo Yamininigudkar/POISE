@@ -1,6 +1,5 @@
 
 import React  from 'react'
-
 import { 
   Grid, Typography, Divider, TextField,
   Button, Paper
@@ -27,13 +26,10 @@ class Leftbar extends React.Component{
     super(props)
     this.openGuide = this.openGuide.bind(this)
     this.closeGuide = this.closeGuide.bind(this)
-    
-  
     this.state = {
       
     }
   }
-
 
   openGuide(){
     this.setState({
@@ -47,9 +43,7 @@ class Leftbar extends React.Component{
     })
   }
 
-  
-
-  
+   
   
   render(){
     return(
@@ -68,9 +62,7 @@ class Leftbar extends React.Component{
       <Grid item lg={12} md={12} sm={12} >
       <Login/>
       </Grid>
-      
       <Grid item lg={12} md={12} sm={12} >
-
       <Typography component='p' color='primary'>
       Or continue with google
       </Typography>
