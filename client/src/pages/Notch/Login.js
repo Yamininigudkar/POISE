@@ -120,7 +120,7 @@ class Login extends React.Component{
 		if(this.state.loggedIn){
 			return(
 				<Grid container>
-				<Grid item lg={12} md={12} sm={12} id='item-username'>
+				<Grid item lg={12} md={12} sm={12} xs={12} id='item-username'>
 				<center>
 				<Typography type='heading' component='h4' color='primary'>
 				Welcome <span id="username">{this.state.firstname}</span><span id="lastname"> {this.state.lastname}</span>
@@ -133,7 +133,7 @@ class Login extends React.Component{
 				</Button>
 				</center>
 				</Grid>
-				<Grid item lg={12} md={12} sm={12} >
+				<Grid item lg={12} md={12} sm={12} xs={12} >
 				<Button onClick={this.openAddNotch} color='primary'>
 				Add new notch
 				</Button>
@@ -155,26 +155,26 @@ class Login extends React.Component{
 		else {
 			return(
 				<Grid container>
-				<Grid item lg={12} md={12} sm={12} id='item-username'>
+				<Grid item lg={12} md={12} sm={12} xs={12} id='item-username'>
 				<TextField fullWidth
 				id='username' value={this.state.username}
 				onChange={this.changeUsername}
 				label='Username'
 				/>
 				</Grid>
-				<Grid item lg={12} md={12} sm={12} id='item-password'>
+				<Grid item lg={12} md={12} sm={12} xs={12} id='item-password'>
 				<TextField fullWidth
 				id='password' type='password' value={this.state.password}
 				onChange={this.changePassword}
 				label='Password'
 				/>
 				</Grid>
-				<Grid item lg={6} md={6} sm={6} >
+				<Grid item lg={6} md={12} sm={12} xs={12} >
 				<Button raised id='btn-login' onClick={this.login} color='primary'>
 				Login
 				</Button>
 				</Grid>
-				<Grid item lg={6} md={6} sm={6} >
+				<Grid item lg={6} md={12} sm={12} xs={12} >
 
 				<Button raised id='btn-signup' onClick={this.handleOpen} color='primary'>
 				Signup

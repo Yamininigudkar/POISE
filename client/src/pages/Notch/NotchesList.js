@@ -1,16 +1,12 @@
 import React from 'react'
-
 import { 
   Grid, Divider, Typography, TextField,
   Avatar, Paper
 } from 'material-ui'
 import Card, { CardHeader, CardContent } from 'material-ui/Card'
 import { MenuItem } from 'material-ui/Menu'
-
 import { notches } from '../../utils/dummyNotches'
-
 class NotchesList extends React.Component{
-
   constructor(props){
     super(props)
     this.changeSearchBy = this.changeSearchBy.bind(this)
@@ -18,13 +14,11 @@ class NotchesList extends React.Component{
       searchBy: 'radius'
     }
   }
-
   changeSearchBy(event){
     this.setState({
       searchBy: event.target.value
     })
   }
-
   render(){
     return (
       <Paper id='right-paper' style={{padding: '10px'}}>
@@ -87,5 +81,4 @@ class NotchesList extends React.Component{
     )
   }
 }
-
 export default NotchesList

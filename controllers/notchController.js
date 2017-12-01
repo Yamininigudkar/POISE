@@ -77,6 +77,7 @@ router.post('/newNotch', function (req, res) {
     });
 
 router.post('/getNotches', actions.getNotches);
+router.get('/notches', actions.getAllNotches);
 
 router.post('/findone', actions.findOne);
 

@@ -21,6 +21,9 @@ export default {
 	},
 	getNotches:function(locationData){
 		return axios.post('/getNotches',locationData)
+	},
+	getAllNotches:function(){
+		return axios.get('/notches')
 	}
 
 };

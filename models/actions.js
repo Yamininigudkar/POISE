@@ -43,6 +43,13 @@ module.exports = {
             }
         });
     },
+    getAllNotches: function(req,res){
+        Notch.find({}).then(data => {
+            res.send(data);
+        }).catch(err => {
+            console.log('Error: ' + err);
+        })
+    },
 
     
 
