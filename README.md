@@ -1,4 +1,4 @@
-# POISE 📍
+# Notch 📍
 (Point of interest sharing and exploring)
 
 ## Collaborators
@@ -6,8 +6,8 @@
 - Alina Anam (Front-end developer )
 
 ## Overview
-Personal journal meets Google. POISE is a single-page app designed to save, map, and share memories (Point of interests,pictures,experience) and inspire users to make more. 
-There are various places that we visit and believe it or google does not show all of them, say for example,you go on a hike and find this spot with an incredible view. You want to share that place with others,but google just shows a trail or just green area on map. How can you share this place this point on map?Hence POISE (Point of interest sharing and exploring).
+Personal journal meets Google. NOTCH is a single-page app designed to save, map, and share memories (Point of interests,pictures,experience) and inspire users to make more. 
+There are various places that we visit and believe it or google does not show all of them, say for example,you go on a hike and find this spot with an incredible view. You want to share that place with others,but google just shows a trail or just green area on map. How can you share this place this point on map?Hence Notch .
 
 ## What are our Website Goals:
 - ✔️ Track your steps through GPS. Take photos and add comments along the way. 
