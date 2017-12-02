@@ -8,7 +8,7 @@ const notchSchema = new Schema({
   description:{ type: String, required: true },
   latitude:{ type: Number, required: true },
   longitude:{ type:Number, required: true },
-  img: {type: String,data:Buffer,default:"http://www.wiu.edu/student_services/housing/residence_halls/images/furniture/no-image-available.png"},
+  img: {type: String,data:Buffer,default:"https://www.jtelectrical.com/content/images/thumbs/0003253_erra31542_strate_line_receptacle_300.jpeg"},
   date: { type: Date, default: Date.now }
 });
 

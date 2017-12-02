@@ -12,6 +12,7 @@ import Navbar from './Navbar'
 import '../../styles/Notch.css'
 import MyFancyComponent from './Map'
 import NotchCard from './notchCard'
+import Main from './categoryfilter'
 
 
 
@@ -43,9 +44,13 @@ class Notch extends React.PureComponent {
         <Grid item lg={12} md={12} sm={12} xs={12} >
           <Navbar />
         </Grid>
-        <Grid item lg={2} md={6} sm={12} xs={12} id='left-bar-col'>
+          <Grid item lg={2} md={6} sm={12} xs={12} id='left-bar-col'>
           <Leftbar />
-        </Grid>
+          <Grid >
+          <Main/>
+          </Grid>
+          
+        </Grid> 
         <Grid item lg={7} md={6} sm={12} xs={12} id='mid-col'>
           <Grid container>
             <Grid item lg={12} md={12} sm={12} xs={12} >
@@ -53,11 +58,10 @@ class Notch extends React.PureComponent {
                 isMarkerShown={this.state.isMarkerShown}
                 onMarkerClick={this.handleMarkerClick}
               />
-              <NotchCard/>
-              
             </Grid>
           </Grid>
         </Grid>
+                
         <Grid item lg={3} md={10} sm={12} xs={12} id='right-bar-col'>
           <NotchesList />
         </Grid>

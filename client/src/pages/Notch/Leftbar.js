@@ -7,7 +7,7 @@ import {
 import Dialog, { DialogTitle } from 'material-ui/Dialog'
 import { blue } from 'material-ui/colors'
 import AddNotch from './AddNotch'
-import Main from './categoryfilter'
+
 import SignUp from './SignUp'
 import Login from './Login'
 import { GoogleLogin } from 'react-google-login' 
@@ -104,7 +104,7 @@ class Leftbar extends React.Component{
       </Grid>
       </Grid>
       </Dialog>
-      <Main/>
+     
       </Grid>
       
       </Grid>

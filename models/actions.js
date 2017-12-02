@@ -2,7 +2,6 @@ let bodyParser = require('body-parser');
 let axios = require('axios');
 let bcrypt = require('bcrypt');
 var session = require('express-session');
-
 let User = require('./user.js');
 let Notch = require('./notch.js');
 
