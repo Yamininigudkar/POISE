@@ -18,32 +18,33 @@ function NotchCard(props) {
   const { classes } = props;
   return (
     <div>
-      <Card className={classes.card}>
-        <CardMedia
-          className={classes.media}
-          image="https://static.pexels.com/photos/371633/pexels-photo-371633.jpeg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography type="headline" component="h2">
-            Lizard
-          </Typography>
-          <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button dense color="primary">
-            Share
-          </Button>
-          <Button dense color="primary">
-            Learn More
-          </Button>
-        </CardActions>
-      </Card>
+    <Card className={classes.card}>
+    <CardMedia
+    className={classes.media}
+    image={props.img}
+    title={props.title}
+    >
+    <img src={props.img} alt="" />
+    </CardMedia>
+    <CardContent>
+    <Typography type="headline" component="h2">
+    {props.title}
+    </Typography>
+    <Typography component="p">
+    {props.description}
+    </Typography>
+    </CardContent>
+    <CardActions>
+    <Button dense color="primary">
+    Share
+    </Button>
+    <Button dense color="primary">
+    Learn More
+    </Button>
+    </CardActions>
+    </Card>
     </div>
-  );
+    );
 }
 
 NotchCard.propTypes = {
