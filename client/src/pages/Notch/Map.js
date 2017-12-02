@@ -22,9 +22,7 @@ const MyMapComponent = compose(
     defaultCenter={{ lat: 42.0453342, lng: -87.6716032 }}
   >
     {props.isMarkerShown &&
-      props.points.map(function(point){
-        <Marker position={{ lat: point.lat, lng: point.lng}} onClick={props.onMarkerClick} />
-      })
+      props.points.map( point =>  <Marker key = {point.lat + " " + point.lng} position={{ lat: point.lat, lng: point.lng}} onClick={props.onMarkerClick} />)
      }
   </GoogleMap>
 )
@@ -73,16 +71,13 @@ class MyFancyComponent extends React.PureComponent {
 
   render() {
     return (
-      <Grid container>
-        <Grid item lg={12} md={12} sm={12} xs={12} >
-
+      
       <MyMapComponent
         isMarkerShown={this.state.isMarkerShown}
         onMarkerClick={this.handleMarkerClick}
         points = {this.state.points}
       />
-      </Grid>
-      </Grid>
+      
     )
   }
 }
