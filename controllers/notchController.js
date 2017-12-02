@@ -63,8 +63,8 @@ router.post('/newNotch', function (req, res) {
             description:req.body.description,
             latitude:req.body.latitude,
             longitude:req.body.longitude,
+            img:req.body.img
             
-
         }
          console.log(req.body.img);
          var image = req.body.img.split("fakepath").pop()

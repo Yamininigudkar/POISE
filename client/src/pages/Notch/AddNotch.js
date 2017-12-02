@@ -96,6 +96,7 @@ class AddNotch extends React.Component{
       img:this.state.img
 
     }
+    console.log(this.state.img)
     API.addNotch(notchData)
     .then(res => {
         console.log("Response",res)
