@@ -119,6 +119,7 @@ render(){
     open={this.state.notchOpened}
     onRequestClose={this.closeNotch} id='NotchCard-Modal'>
     <NotchCard 
+    key={notch._id}
     id={notch._id} 
     />
     </Dialog>
