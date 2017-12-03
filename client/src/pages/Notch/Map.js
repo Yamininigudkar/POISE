@@ -16,69 +16,71 @@ const MyMapComponent = compose(
   }),
   withScriptjs,
   withGoogleMap
-)((props) =>
+  )((props) =>
   <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: 42.0453342, lng: -87.6716032 }}
+  defaultZoom={8}
+  defaultCenter={{ lat: 42.0453342, lng: -87.6716032 }}
   >
-    {props.isMarkerShown &&
-      props.points.map( point =>  <Marker key = {point.lat + " " + point.lng} position={{ lat: point.lat, lng: point.lng}} onClick={props.onMarkerClick} />)
-     }
+  {props.isMarkerShown &&
+    props.points.map( point =>  <Marker key = {point.lat + " " + point.lng} 
+      position={{ lat: point.lat, lng: point.lng}} onClick={props.onMarkerClick} ></Marker>)
+  }
   </GoogleMap>
-)
-class MyFancyComponent extends React.PureComponent {
-  state = {
-    isMarkerShown: false,
-    points: []
-  }
 
-  componentDidMount() {
-    this.delayedShowMarker()
-    this.displayNotches()
-  }
+  )
+  class MyFancyComponent extends React.PureComponent {
+    state = {
+      isMarkerShown: false,
+      points: []
+    }
 
-  delayedShowMarker = () => {
-    setTimeout(() => {
-      this.setState({ isMarkerShown: true })
-    }, 3000)
-  }
+    componentDidMount() {
+      this.delayedShowMarker()
+      this.displayNotches()
+    }
 
-  displayNotches=() =>{
-    console.log("noch start.........")
+    delayedShowMarker = () => {
+      setTimeout(() => {
+        this.setState({ isMarkerShown: true })
+      }, 3000)
+    }
+
+    displayNotches=() =>{
+      console.log("noch start.........")
       let points=[]
-    API.getAllNotches()
-    .then(notchdata => {
-     
-      console.log(notchdata)
-      notchdata.data.map(function(point){
-        console.log("here")
-      
-        let obj = {}
-        obj.lat = point.latitude
-        obj.lng = point.longitude
-        points.push(obj)
-      }) 
-      console.log(points, "these poits")
-      this.setState({points:points}) 
-    })
+      API.getAllNotches()
+      .then(notchdata => {
 
-  }
+        console.log(notchdata)
+        notchdata.data.map(function(point){
+          console.log("here")
 
-  handleMarkerClick = () => {
-    this.setState({ isMarkerShown: false })
-    this.delayedShowMarker()
-  }
+          let obj = {}
+          obj.lat = point.latitude
+          obj.lng = point.longitude
+          points.push(obj)
+        }) 
+        console.log(points, "these poits")
+        this.setState({points:points}) 
+      })
 
-  render() {
-    return (
-      
-      <MyMapComponent
+    }
+
+    handleMarkerClick = () => {
+      this.setState({ isMarkerShown: false })
+      this.delayedShowMarker()
+    }
+
+    render() {
+      return (
+
+        <MyMapComponent
         isMarkerShown={this.state.isMarkerShown}
         onMarkerClick={this.handleMarkerClick}
         points = {this.state.points}
-      />
-      
-    )
+        />
+
+        )
+    }
   }
-}
-export default MyFancyComponent
+  export default MyFancyComponent

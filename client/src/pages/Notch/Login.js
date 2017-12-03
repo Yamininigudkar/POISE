@@ -127,6 +127,7 @@ class Login extends React.Component{
 				</Typography>
 				</center>
 				<Divider />
+				<Divider />
 				<center>
 				<Button raised id='logout' onClick={this.logOut} color='primary'>
 				Logout

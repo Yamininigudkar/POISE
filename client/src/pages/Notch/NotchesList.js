@@ -89,9 +89,7 @@ render(){
     title={notch.title.toUpperCase()}
     style={{backgroundColor: 'skyblue'}}
     >
-
     </CardHeader>
-
     <CardContent>
     <Typography component='p'>
     Category: {notch.category}
@@ -101,9 +99,10 @@ render(){
     </Typography>
     <Button key={notch._id} onClick={this.openNotch} >View Notch</Button>
     <Dialog
+    key={notch._id}
     open={this.state.notchOpened}
     onRequestClose={this.closeNotch} id='NotchCard-Modal'>
-    <NotchCard handleClose={this.closeNotch}
+    <NotchCard  key={notch._id} handleClose={this.closeNotch}
     title={notch.title}
     img={notch.img}
     description={notch.description}

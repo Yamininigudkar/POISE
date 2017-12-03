@@ -12,13 +12,13 @@ import Navbar from './Navbar'
 import '../../styles/Notch.css'
 import MyFancyComponent from './Map'
 import NotchCard from './notchCard'
-import Main from './categoryfilter'
+
 
 
 
 
 class Notch extends React.PureComponent {
-  
+
 
   render() {
     return (
@@ -29,7 +29,6 @@ class Notch extends React.PureComponent {
       <Grid item lg={2} md={6} sm={12} xs={12} id='left-bar-col'>
       <Leftbar />
       <Grid >
-      <Main/>
       </Grid>
       
       </Grid> 
@@ -49,7 +48,7 @@ class Notch extends React.PureComponent {
       <Grid item lg={3} md={3} sm={3} xs={3}> </Grid>
       </Grid>
       );
+    }
   }
-}
 
-export default Notch;
+  export default Notch;

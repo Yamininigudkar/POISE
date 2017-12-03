@@ -5,6 +5,7 @@ var path = require("path");
 var session = require('express-session');
 const app = express();
 let routes = require('./controllers/notchController.js');
+const debug = require ("debug")
 const PORT = process.env.PORT || 3001;
 
 // Configure body parser for AJAX requests
@@ -15,8 +16,8 @@ app.use(express.static("client/build"));
 app.use(session({ 
 	secret: 'poise',
 	key: 'user_sid',
-    resave: false,
-    saveUninitialized: false, cookie: { maxAge: 6000000 }
+	resave: false,
+	saveUninitialized: false, cookie: { maxAge: 6000000 }
 }))
 
 
