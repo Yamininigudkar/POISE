@@ -8,10 +8,10 @@ export default {
 	
 	
 	userLogin: function(userData) {
-			return axios.post("/existinguser",userData)
+		return axios.post("/existinguser",userData)
 	},
 	userSignUp: function(userData) {
-			return axios.post("/newuser",userData)
+		return axios.post("/newuser",userData)
 	},
 	addNotch: function(notchData){
 		return axios.post("/newNotch", notchData)
@@ -24,6 +24,9 @@ export default {
 	},
 	getAllNotches:function(){
 		return axios.get('/notches')
+	},
+	notchDetails:function(notchid){
+		return axios.post('/findone',notchid)
 	}
 
 };

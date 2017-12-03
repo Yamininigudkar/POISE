@@ -1,11 +1,15 @@
 
 #item-logo{
-  margin: 0px;
-  /*background-color:#0561F9; */
+	margin: 0px;
+	/*background-color:#0561F9; */
 }
 
 
 #left-paper{
-  padding: 10px;
+	padding: 10px;
+}
+
+.Typography{
+	font-size: 10px
 }
 

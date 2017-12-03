@@ -1,0 +1,142 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'material-ui/svg-icons' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.2
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData material-ui/svg-icons
+8 silly fetchOtherPackageData material-ui/svg-icons
+9 silly cache add args [ 'material-ui/svg-icons', null ]
+10 verbose cache add spec material-ui/svg-icons
+11 silly cache add parsed spec Result {
+11 silly cache add   raw: 'material-ui/svg-icons',
+11 silly cache add   scope: null,
+11 silly cache add   escapedName: null,
+11 silly cache add   name: null,
+11 silly cache add   rawSpec: 'material-ui/svg-icons',
+11 silly cache add   spec: 'github:material-ui/svg-icons',
+11 silly cache add   type: 'hosted',
+11 silly cache add   hosted:
+11 silly cache add    { type: 'github',
+11 silly cache add      ssh: 'git@github.com:material-ui/svg-icons.git',
+11 silly cache add      sshUrl: 'git+ssh://git@github.com/material-ui/svg-icons.git',
+11 silly cache add      httpsUrl: 'git+https://github.com/material-ui/svg-icons.git',
+11 silly cache add      gitUrl: 'git://github.com/material-ui/svg-icons.git',
+11 silly cache add      shortcut: 'github:material-ui/svg-icons',
+11 silly cache add      directUrl: 'https://raw.githubusercontent.com/material-ui/svg-icons/master/package.json' } }
+12 verbose addRemoteGit caching material-ui/svg-icons
+13 verbose addRemoteGit material-ui/svg-icons is a repository hosted by github
+14 silly tryGitProto attempting to clone git://github.com/material-ui/svg-icons.git
+15 silly tryClone cloning material-ui/svg-icons via git://github.com/material-ui/svg-icons.git
+16 verbose tryClone git-github-com-material-ui-svg-icons-git-90d79676 not in flight; caching
+17 verbose correctMkdir C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes correctMkdir not in flight; initializing
+18 verbose makeDirectory C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes creation not in flight; initializing
+19 verbose makeCacheDir UID & GID are irrelevant on win32
+20 info git [ 'clone',
+20 info git   '--template=C:\\Users\\yamini\\AppData\\Roaming\\npm-cache\\_git-remotes\\_templates',
+20 info git   '--mirror',
+20 info git   'git://github.com/material-ui/svg-icons.git',
+20 info git   'C:\\Users\\yamini\\AppData\\Roaming\\npm-cache\\_git-remotes\\git-github-com-material-ui-svg-icons-git-90d79676' ]
+21 verbose git clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git://github.com/material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-90d79676: Cloning into bare repository 'C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-90d79676'...
+21 verbose git clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git://github.com/material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-90d79676: fatal: remote error:
+21 verbose git clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git://github.com/material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-90d79676:   Repository not found.
+22 silly tryHTTPS attempting to clone git+https://github.com/material-ui/svg-icons.git
+23 silly tryClone cloning material-ui/svg-icons via git+https://github.com/material-ui/svg-icons.git
+24 verbose tryClone git-https-github-com-material-ui-svg-icons-git-4546eae4 not in flight; caching
+25 verbose correctMkdir C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes correctMkdir not in flight; initializing
+26 info git [ 'clone',
+26 info git   '--template=C:\\Users\\yamini\\AppData\\Roaming\\npm-cache\\_git-remotes\\_templates',
+26 info git   '--mirror',
+26 info git   'https://github.com/material-ui/svg-icons.git',
+26 info git   'C:\\Users\\yamini\\AppData\\Roaming\\npm-cache\\_git-remotes\\git-https-github-com-material-ui-svg-icons-git-4546eae4' ]
+27 verbose git clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror https://github.com/material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-https-github-com-material-ui-svg-icons-git-4546eae4: Cloning into bare repository 'C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-https-github-com-material-ui-svg-icons-git-4546eae4'...
+27 verbose git clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror https://github.com/material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-https-github-com-material-ui-svg-icons-git-4546eae4: remote: Repository not found.
+27 verbose git clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror https://github.com/material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-https-github-com-material-ui-svg-icons-git-4546eae4: fatal: repository 'https://github.com/material-ui/svg-icons.git/' not found
+28 silly trySSH attempting to clone git@github.com:material-ui/svg-icons.git
+29 silly tryClone cloning material-ui/svg-icons via git@github.com:material-ui/svg-icons.git
+30 verbose tryClone git-github-com-material-ui-svg-icons-git-0058a8e4 not in flight; caching
+31 verbose correctMkdir C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes correctMkdir not in flight; initializing
+32 info git [ 'clone',
+32 info git   '--template=C:\\Users\\yamini\\AppData\\Roaming\\npm-cache\\_git-remotes\\_templates',
+32 info git   '--mirror',
+32 info git   'git@github.com:material-ui/svg-icons.git',
+32 info git   'C:\\Users\\yamini\\AppData\\Roaming\\npm-cache\\_git-remotes\\git-github-com-material-ui-svg-icons-git-0058a8e4' ]
+33 error git clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4: Cloning into bare repository 'C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4'...
+33 error git clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4: Warning: Permanently added the RSA host key for IP address '192.30.255.112' to the list of known hosts.
+33 error git clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4: ERROR: Repository not found.
+33 error git clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4: fatal: Could not read from remote repository.
+33 error git clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4:
+33 error git clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4: Please make sure you have the correct access rights
+33 error git clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4: and the repository exists.
+34 silly fetchPackageMetaData Error: Command failed: git -c core.longpaths=true clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4
+34 silly fetchPackageMetaData Cloning into bare repository 'C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4'...
+34 silly fetchPackageMetaData Warning: Permanently added the RSA host key for IP address '192.30.255.112' to the list of known hosts.
+34 silly fetchPackageMetaData ERROR: Repository not found.
+34 silly fetchPackageMetaData fatal: Could not read from remote repository.
+34 silly fetchPackageMetaData
+34 silly fetchPackageMetaData Please make sure you have the correct access rights
+34 silly fetchPackageMetaData and the repository exists.
+34 silly fetchPackageMetaData
+34 silly fetchPackageMetaData     at ChildProcess.exithandler (child_process.js:198:12)
+34 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+34 silly fetchPackageMetaData     at ChildProcess.emit (events.js:191:7)
+34 silly fetchPackageMetaData     at maybeClose (internal/child_process.js:891:16)
+34 silly fetchPackageMetaData     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+34 silly fetchPackageMetaData  error for material-ui/svg-icons { Error: Command failed: git -c core.longpaths=true clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4
+34 silly fetchPackageMetaData Cloning into bare repository 'C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4'...
+34 silly fetchPackageMetaData Warning: Permanently added the RSA host key for IP address '192.30.255.112' to the list of known hosts.
+34 silly fetchPackageMetaData ERROR: Repository not found.
+34 silly fetchPackageMetaData fatal: Could not read from remote repository.
+34 silly fetchPackageMetaData
+34 silly fetchPackageMetaData Please make sure you have the correct access rights
+34 silly fetchPackageMetaData and the repository exists.
+34 silly fetchPackageMetaData
+34 silly fetchPackageMetaData     at ChildProcess.exithandler (child_process.js:198:12)
+34 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+34 silly fetchPackageMetaData     at ChildProcess.emit (events.js:191:7)
+34 silly fetchPackageMetaData     at maybeClose (internal/child_process.js:891:16)
+34 silly fetchPackageMetaData     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+34 silly fetchPackageMetaData   killed: false,
+34 silly fetchPackageMetaData   code: 128,
+34 silly fetchPackageMetaData   signal: null,
+34 silly fetchPackageMetaData   cmd: 'git -c core.longpaths=true clone --template=C:\\Users\\yamini\\AppData\\Roaming\\npm-cache\\_git-remotes\\_templates --mirror git@github.com:material-ui/svg-icons.git C:\\Users\\yamini\\AppData\\Roaming\\npm-cache\\_git-remotes\\git-github-com-material-ui-svg-icons-git-0058a8e4' }
+35 silly rollbackFailedOptional Starting
+36 silly rollbackFailedOptional Finishing
+37 silly runTopLevelLifecycles Finishing
+38 silly install printInstalled
+39 verbose stack Error: Command failed: git -c core.longpaths=true clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4
+39 verbose stack Cloning into bare repository 'C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4'...
+39 verbose stack Warning: Permanently added the RSA host key for IP address '192.30.255.112' to the list of known hosts.
+39 verbose stack ERROR: Repository not found.
+39 verbose stack fatal: Could not read from remote repository.
+39 verbose stack
+39 verbose stack Please make sure you have the correct access rights
+39 verbose stack and the repository exists.
+39 verbose stack
+39 verbose stack     at ChildProcess.exithandler (child_process.js:198:12)
+39 verbose stack     at emitTwo (events.js:106:13)
+39 verbose stack     at ChildProcess.emit (events.js:191:7)
+39 verbose stack     at maybeClose (internal/child_process.js:891:16)
+39 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+40 verbose cwd C:\NorthWestern\Homework\POISE\client
+41 error Windows_NT 10.0.15063
+42 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "--save" "material-ui/svg-icons"
+43 error node v6.11.2
+44 error npm  v3.10.10
+45 error code 128
+46 error Command failed: git -c core.longpaths=true clone --template=C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:material-ui/svg-icons.git C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4
+46 error Cloning into bare repository 'C:\Users\yamini\AppData\Roaming\npm-cache\_git-remotes\git-github-com-material-ui-svg-icons-git-0058a8e4'...
+46 error Warning: Permanently added the RSA host key for IP address '192.30.255.112' to the list of known hosts.
+46 error ERROR: Repository not found.
+46 error fatal: Could not read from remote repository.
+46 error
+46 error Please make sure you have the correct access rights
+46 error and the repository exists.
+47 error If you need help, you may report this error at:
+47 error     <https://github.com/npm/npm/issues>
+48 verbose exit [ 1, true ]

@@ -9,7 +9,6 @@ import { blue } from 'material-ui/colors'
 import AddNotch from './AddNotch'
 import SignUp from './SignUp'
 import Login from './Login'
-import { GoogleLogin } from 'react-google-login' 
 import '../../styles/leftbar.css'
 import API from '../../utils/API';
 
@@ -26,7 +25,7 @@ class Leftbar extends React.Component{
     this.openGuide = this.openGuide.bind(this)
     this.closeGuide = this.closeGuide.bind(this)
     this.state = {
-      
+
     }
   }
 
@@ -67,12 +66,7 @@ class Leftbar extends React.Component{
       </Typography>
       </Grid>
       <Grid item lg={12} md={12} sm={12} >
-      <GoogleLogin
-      clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-      buttonText="Google Login"
-      onSuccess={responseGoogle}
-      onFailure={responseGoogle}
-      />
+      
       </Grid>
       <Grid item lg={12} md={12} sm={12} >
       <Divider />

@@ -1,16 +1,27 @@
 import React from 'react'
-
 import { 
   Grid, Divider, Typography, TextField,
   Avatar, Paper,Button
 } from 'material-ui'
 import Card, { CardHeader, CardContent} from 'material-ui/Card'
 import { MenuItem } from 'material-ui/Menu'
-
-import { notches } from '../../utils/dummyNotches'
 import API from '../../utils/API';
 import NotchCard from './notchCard'
+import {GridList, GridTile} from 'material-ui/GridList';
 import Dialog, { DialogTitle } from 'material-ui/Dialog'
+
+const styles = {
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
+  gridList: {
+    width: 550,
+    height: 500,
+    overflowY: 'auto',
+  },
+};
 
 
 class NotchesList extends React.Component{
@@ -81,8 +92,13 @@ render(){
    <Grid container>
    <Grid item lg={2} md={2} sm={2} > </Grid>
    <Grid item lg={8} md={8} sm={8} >
-   <Grid container>
+   <div style={styles.root}>
+   <GridList
+   cellHeight= {180}
+   style={styles.gridList}
+   >
    {this.state.notches.map(notch => (
+
     <Grid item lg={12} md={12} sm={12} >
     <Card>
     <CardHeader
@@ -102,18 +118,18 @@ render(){
     key={notch._id}
     open={this.state.notchOpened}
     onRequestClose={this.closeNotch} id='NotchCard-Modal'>
-    <NotchCard  key={notch._id} handleClose={this.closeNotch}
-    title={notch.title}
-    img={notch.img}
-    description={notch.description}
+    <NotchCard 
+    id={notch._id} 
     />
     </Dialog>
     </CardContent>
     </Card>
     </Grid>
+    
     ))}
 
-   </Grid>
+   </GridList>
+   </div>
    </Grid>
    <Grid item lg={2} md={2} sm={2} > </Grid>
    </Grid>

@@ -81,33 +81,30 @@ changeDescription(event){
 }
 
 
-
-
-
-
-
 addNotch(){
-
-  let image = this.state.img.replace( "C:\\fakepath\\",  "")
   const notchData = {
     title:this.state.title,
     category:this.state.category,
     description:this.state.description,
     latitude:this.state.latitude,
     longitude:this.state.longitude,
-    img:image
-
+    img:this.state.img
+    
   }
+
+  
+
+  
   console.log(this.state.img)
   API.addNotch(notchData)
   .then(res => {
     console.log("Response",res)
-    
+
   })
   .catch(err => console.log(err));
   this.props.closeAddNotch()
-  
-  
+
+
 }
 
 render(){
@@ -138,7 +135,7 @@ render(){
     value={this.state.category}
     onChange={this.changeCategory}
     id='category' >
-    
+
     <MenuItem value='All' onClick={this.changeCategory}>All</MenuItem>
     <MenuItem value='Art' onClick={this.changeCategory}>Art</MenuItem>
     <MenuItem value='Outdoor' onClick={this.changeCategory}>Outdoor</MenuItem>

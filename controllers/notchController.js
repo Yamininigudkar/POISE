@@ -9,6 +9,29 @@ let Notch = require('../models/notch.js');
 let multer = require('multer');
 let fs = require('fs');
 
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/')
+},
+filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now()+'JPG')
+}
+})
+var upload = multer({ storage: storage }).single('imageKey');
+
+router.post('/uploadnotch', function (req, res) {
+  upload(req, res, function (err) {
+    if (err) {
+      // An error occurred when uploading+
+      return
+  }
+  res.json("success")
+
+    // Everything went fine
+})
+})
+
+
 
 
 //Routes
@@ -54,26 +77,16 @@ router.get('/logout',function(req,res){
 
 // Accepts login information from new users, checks if the username exists, and saves the user if unique
 router.post('/newuser', actions.newUser);
-debugger
 
-var storage = multer.diskStorage({ //multers disk storage settings
-    destination: function (req, file, cb) {
-        cb(null, './uploads/')
-    },
-    filename: function (req, file, cb) {
-        var datetimestamp = Date.now();
-        cb(null, file.fieldname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length -1])
-    }
-});
+
+
 
 
 router.post('/newNotch', function (req, res) {
     console.log("adding notch")
-    let image = req.body.img
-    console.log(image)
-
-    var imgPath = image
-
+    // console.log(req)
+    // file = req.body.img
+    // console.log(file)
 
     let notchObj = new Notch ({
         title:req.body.title,
@@ -85,9 +98,9 @@ router.post('/newNotch', function (req, res) {
         img:req.body.img
 
     })
-    notchObj.img.data= fs.readFileSync(imgPath);
-    notchObj.img.contentType='image/JPG'
-    console.log(notchObj.img.data)
+    // notchObj.img.data= fs.readFileSync(imgPath);
+    // notchObj.img.contentType='image/JPG'
+    //console.log(notchObj.i)
     console.log("============================================================")
     notchObj.save(function (err, notchObj) {
       if (err) throw err;
@@ -96,16 +109,16 @@ router.post('/newNotch', function (req, res) {
   });
     console.log(notchObj)
 
-    //notch.img.contentType = 'jpg';
+    notch.img.contentType = 'jpg';
 
-    // Notch.create(notch).then(data => {
-    //         // console.log(data);
-    //         res.send('success');
-    //     }).catch(err => {   
-    //         console.log(err);
-    //         res.send('unsuccessful');
-    //     })
-});
+    Notch.create(notch).then(data => {
+            // console.log(data);
+            res.send('success');
+        }).catch(err => {   
+            console.log(err);
+            res.send('unsuccessful');
+        })
+    });
 
 router.post('/getNotches', actions.getNotches);
 router.get('/notches', actions.getAllNotches);
