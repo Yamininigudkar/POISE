@@ -37,44 +37,44 @@ class SearchNotches extends React.Component{
   render(){
     return (
       <Grid container>
-        <Grid item lg={12} md={12} sm={12} >
-          <Grid container>
-            <Grid item lg={2} md={2} sm={2} >
-              <center>
-                <Typography component='p' type='body' style={{marginTop: '18px'}}>
-                  SEARCH BY
-                </Typography>
-              </center>
-            </Grid>
-            <Grid item lg={2} md={2} sm={2} >
-              <TextField fullWidth select
-                id='search-by'
-                value={this.state.searchBy}
-                onChange={this.changeSearchBy}
-                label='search by'
-              >
-                <MenuItem key='radius' value='radius'>Radius</MenuItem>
-                <MenuItem key='user' value='user'>User</MenuItem>
-                <MenuItem key='keyword' value='keyword'>Keyword</MenuItem>
-              </TextField>
-            </Grid>
-            <Grid item lg={4} md={4} sm={4} >
-              <TextField id='search-box' fullWidth
-                value={this.state.searchKey}
-                onChange={this.changeSearchKey}
-                label='search'
-              />
-            </Grid>
-            <Grid item lg={4} md={4} sm={4} >
-              <Button raised id='search-button'
-                color='primary' onClick={this.search}>
-                Search
-              </Button>
-            </Grid>
-          </Grid>
-        </Grid>
+      <Grid item lg={12} md={12} sm={12} xs={12} >
+      <Grid container>
+      <Grid item lg={2} md={2} sm={2} xs={6} >
+      <center>
+      <Typography component='p' type='body' style={{marginTop: '18px'}}>
+      SEARCH BY
+      </Typography>
+      </center>
       </Grid>
-    )
+      <Grid item lg={2} md={2} sm={2} xs={6} >
+      <TextField fullWidth select
+      id='search-by'
+      value={this.state.searchBy}
+      onChange={this.changeSearchBy}
+      label='search by'
+      >
+      <MenuItem key='radius' value='radius'>Radius</MenuItem>
+      <MenuItem key='user' value='user'>User</MenuItem>
+      <MenuItem key='keyword' value='keyword'>Keyword</MenuItem>
+      </TextField>
+      </Grid>
+      <Grid item lg={4} md={4} sm={4} xs={12} >
+      <TextField id='search-box' fullWidth
+      value={this.state.searchKey}
+      onChange={this.changeSearchKey}
+      label='search'
+      />
+      </Grid>
+      <Grid item lg={4} md={4} sm={4} xs={12} >
+      <Button raised id='search-button'
+      color='primary' onClick={this.search}>
+      Search
+      </Button>
+      </Grid>
+      </Grid>
+      </Grid>
+      </Grid>
+      )
   }
 }
 

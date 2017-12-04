@@ -72,9 +72,9 @@ render(){
    <Paper id='right-paper' style={{padding: '10px'}}>
    
    <Grid container>
-   <Grid item lg={12} md={12} sm={12} >
+   <Grid item lg={12} md={12} sm={12} xs={12} >
    <Grid container>
-   <Grid item lg={12} md={12} sm={12} >
+   <Grid item lg={12} md={12} sm={12} xs={12}>
    <center>
    <Typography type='heading' component='h1' color='primary'>
    Notches List
@@ -83,43 +83,45 @@ render(){
    </Grid>
    </Grid>
    </Grid>
-   <Grid item lg={12} md={12} sm={12} >
+   <Grid item lg={12} md={12} sm={12} xs={12} >
    <Divider />
    </Grid>
-   <Grid item lg={12} md={12} sm={12} >
+   <Grid item lg={12} md={12} sm={12} xs={12} >
    <Grid container>
-   <Grid item lg={12} md={12} sm={12} >
+   <Grid item lg={12} md={12} sm={12} xs={12} >
    <Grid container>
-   <Grid item lg={2} md={2} sm={2} > </Grid>
-   <Grid item lg={8} md={8} sm={8} >
+   <Grid item lg={2} md={2} sm={2} xs={2}> </Grid>
+   <Grid item lg={8} md={8} sm={8} xs={8} >
    <div style={styles.root}>
    <GridList
    cellHeight= {180}
    style={styles.gridList}
+   id="notchlist"
    >
    {this.state.notches.map(notch => (
 
-    <Grid item lg={12} md={12} sm={12} >
+    <Grid key={notch._id} item lg={12} md={12} sm={12} xs={12} >
     <Card>
     <CardHeader
+    key={notch.title}
     title={notch.title.toUpperCase()}
     style={{backgroundColor: 'skyblue'}}
     >
     </CardHeader>
     <CardContent>
-    <Typography component='p'>
+    <Typography key={notch.category} component='p'>
     Category: {notch.category}
     </Typography>
-    <Typography component='p'>
+    <Typography key={notch.description} component='p'>
     Experience: {notch.description}
     </Typography>
-    <Button key={notch._id} onClick={this.openNotch} >View Notch</Button>
+    <Button  onClick={this.openNotch} >View Notch</Button>
     <Dialog
-    key={notch._id}
+    
     open={this.state.notchOpened}
     onRequestClose={this.closeNotch} id='NotchCard-Modal'>
     <NotchCard 
-    key={notch._id}
+    
     id={notch._id} 
     />
     </Dialog>
@@ -132,7 +134,7 @@ render(){
    </GridList>
    </div>
    </Grid>
-   <Grid item lg={2} md={2} sm={2} > </Grid>
+   <Grid item lg={2} md={2} sm={2} xs={12} > </Grid>
    </Grid>
    </Grid>
    </Grid>

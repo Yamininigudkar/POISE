@@ -61,9 +61,7 @@ class Leftbar extends React.Component{
       <Login/>
       </Grid>
       <Grid item lg={12} md={12} sm={12} >
-      <Typography component='p' color='primary'>
-      Or continue with google
-      </Typography>
+      
       </Grid>
       <Grid item lg={12} md={12} sm={12} >
       

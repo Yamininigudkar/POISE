@@ -29,6 +29,7 @@ class NotchCard extends React.Component{
     }
 }
 componentDidMount() {
+    console.log(this.props.data)
     API.notchDetails(this.props.id)
     .then(res => this.setState({ notchData: res.data }))
     .catch(err => console.log(err));
@@ -49,8 +50,10 @@ render(){
      </center>
      </Grid>
      <Grid item lg={12} md={12} sm={12} >
+     <center>
      <Divider />
      <img src={this.state.notchData.img} style={styles.img}/>
+     </center>
      </Grid>
      <Divider/>
      <Grid item lg={12} md={12} sm={12} >

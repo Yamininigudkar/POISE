@@ -20,23 +20,23 @@ class Navbar extends React.Component{
   render(){
     return (
       <AppBar position="static" id='appbar' color='white'>
-        <Toolbar disableGutters>
-          <Grid container>
-            <Grid item lg={2} md={2} sm={2} >
-              <img  id='avatar-logo' src="http://www.heliheyn.de/Maps/Video/TransparentGlobe.gif" />
-                
-              
-            </Grid>
-            <Grid item lg={10} md={10} sm={10} >
-              
-              <SearchNotches />
-            </Grid>
-            <Grid item lg={2} md={2} sm={2} > </Grid>
-          </Grid>
-        </Toolbar>
+      <Toolbar disableGutters>
+      <Grid container>
+      <Grid item lg={2} md={2} sm={2} xs={2} >
+      <img  id='avatar-logo' src="http://www.heliheyn.de/Maps/Video/TransparentGlobe.gif" />
+      
+      
+      </Grid>
+      <Grid item lg={10} md={10} sm={10} xs={10}>
+      
+      <SearchNotches />
+      </Grid>
+      <Grid item lg={2} md={2} sm={2} xs={2} > </Grid>
+      </Grid>
+      </Toolbar>
       </AppBar>
-    )
+      )
+    }
   }
-}
 
-export default Navbar
+  export default Navbar

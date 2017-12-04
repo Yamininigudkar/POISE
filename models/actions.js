@@ -8,8 +8,8 @@ let Notch = require('./notch.js');
 
 module.exports = {
 
-  
-   
+
+
     newUser: function (req, res) {
         console.log(req);
         User.findOne({ 'username': req.body.username }, function (err, user) {
@@ -53,38 +53,46 @@ module.exports = {
     
 
     getNotches: function (req, res) {
-        // console.log(req.body);
-        // console.log('finding notches');
-        let lng = req.body.lng;
-        let lat = req.body.lat;
-        if (req.body.category != 'All') {
-            let category = req.body.category.split("|");
-            var parent = category[0].trim();
-            var child = category[1].trim();
-        } else {
-            var parent = { $exists: true }
-            var child = { $exists: true }
-        }
-        Notch.find({
-            "geometry": {
-                $near: {
-                    $geometry: { type: "Point", coordinates: [lng, lat] },
-                    $maxDistance: 160000
-                }
-            },
-            "properties.category_parent": parent,
-            "properties.category_child": child
-        }
-        ).then(data => {
-            // console.log('found notches');
-            // console.log(data);
-            res.send(data);
-        }).catch(err => {
-            console.log('Error: ' + err);
-        })
-    },
 
-    findOne: function (req, res) {
+        if (req.body.category) 
+        {
+         
+         Notch.find({"category":req.body.category}, function (err, data){
+            if (err) {
+                console.log(err);
+                res.send('unsuccessful');
+            } else {
+
+              res.send(data);
+          }
+
+      } ).then(data => {
+        res.send(data);
+    }).catch(err => {
+        console.log('Error: ' + err);
+    })
+} else if(req.body.userId)
+{
+
+    Notch.find(req.body.userId, function (err, data){
+        if (err) {
+            console.log(err);
+            res.send('unsuccessful');
+        } else {
+
+            res.send(data);
+        }
+    }
+    ).then(data => {
+        res.send(data);
+    }).catch(err => {
+        console.log('Error: ' + err);
+    })
+}
+
+},
+
+findOne: function (req, res) {
         // console.log(req.body);
         Notch.findById(req.body.id, function (err, data) {
             if (err) {
@@ -105,7 +113,7 @@ module.exports = {
                 console.log(err);
             } else {
                 console.log('user Notches');
-                console.log(data);
+                //console.log(data);
                 res.send(data);
             }
         })

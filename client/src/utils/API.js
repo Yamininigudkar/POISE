@@ -27,6 +27,9 @@ export default {
 	},
 	notchDetails:function(notchid){
 		return axios.post('/findone',notchid)
+	},
+	userNotches:function(){
+		return axios.post('/userNotches')
 	}
 
 };

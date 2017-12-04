@@ -101,17 +101,17 @@ router.post('/newNotch', function (req, res) {
     // notchObj.img.data= fs.readFileSync(imgPath);
     // notchObj.img.contentType='image/JPG'
     //console.log(notchObj.i)
-    console.log("============================================================")
-    notchObj.save(function (err, notchObj) {
-      if (err) throw err;
+  //   console.log("============================================================")
+  //   notchObj.save(function (err, notchObj) {
+  //     if (err) throw err;
 
-      console.error('saved img to mongo');
-  });
-    console.log(notchObj)
+  //     console.error('saved img to mongo');
+  // });
+  //   console.log(notchObj)
 
-    notch.img.contentType = 'jpg';
+  //   notch.img.contentType = 'jpg';
 
-    Notch.create(notch).then(data => {
+  Notch.create(notchObj).then(data => {
             // console.log(data);
             res.send('success');
         }).catch(err => {   

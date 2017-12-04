@@ -26,13 +26,13 @@ class Notch extends React.PureComponent {
       <Grid item lg={12} md={12} sm={12} xs={12} >
       <Navbar />
       </Grid>
-      <Grid item lg={2} md={6} sm={12} xs={12} id='left-bar-col'>
+      <Grid item lg={2} md={6} sm={6} xs={12} id='left-bar-col'>
       <Leftbar />
       <Grid >
       </Grid>
       
       </Grid> 
-      <Grid item lg={7} md={6} sm={12} xs={12} id='mid-col'>
+      <Grid item lg={7} md={6} sm={6} xs={12} id='mid-col'>
       <Grid container>
       <Grid item lg={12} md={12} sm={12} xs={12} >
       <MyFancyComponent

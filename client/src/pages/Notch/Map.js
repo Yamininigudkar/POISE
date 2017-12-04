@@ -9,7 +9,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 
 const MyMapComponent = compose(
   withProps({
-    //googleMapURL: "https:/"+"/maps.googleapis.com/maps/api/js?key=AIzaSyBZh02mPHBCAq3ZCKxRCKJwjx0e_fgYi5Y&callback=initMap",
+    googleMapURL: "https:/"+"/maps.googleapis.com/maps/api/js?key=AIzaSyBZh02mPHBCAq3ZCKxRCKJwjx0e_fgYi5Y&callback=initMap",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
