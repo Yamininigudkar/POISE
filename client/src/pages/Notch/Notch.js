@@ -11,7 +11,7 @@ import NotchesList from './NotchesList'
 import Navbar from './Navbar'
 import '../../styles/Notch.css'
 import MyFancyComponent from './Map'
-import NotchCard from './notchCard'
+import SearchCard from './searchCard'
 
 
 
@@ -52,6 +52,15 @@ class Notch extends React.PureComponent {
       
       />
       </Grid>
+      {
+        this.state.filteredNotches.map(notch => (
+          <Grid item lg={6} md={6} sm={6} >
+          <SearchCard 
+          data={notch}
+          />
+          </Grid>
+          ))
+      }
       
       </Grid>
       </Grid>
