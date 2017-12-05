@@ -36,7 +36,7 @@ componentWillMount(){
     console.log("notchdata",this.state.notchData)
     
 
-    API.notchDetails(this.props.data.id)
+    API.notchDetails(this.props.data._id)
     .then(res =>{
         console.log(res, "this came back after")
         this.setState({notchData:res.data})

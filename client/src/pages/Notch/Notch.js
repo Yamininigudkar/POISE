@@ -52,15 +52,7 @@ class Notch extends React.PureComponent {
       
       />
       </Grid>
-      {
-                  this.state.filteredNotches.map(notch => (
-                    <Grid item lg={6} md={6} sm={6} xs={6}>
-                      <NotchCard 
-                        data={notch} 
-                      />
-                    </Grid>
-                  ))
-                }
+      
       </Grid>
       </Grid>
       

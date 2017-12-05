@@ -91,52 +91,33 @@ router.post('/newuser', actions.newUser);
 
 
 router.post('/newNotch',upload.any() ,function (req, res) {
-  console.log("adding notch")
- // console.log(req)
+  var imgPath = req.files[0].path
 
- console.log(req,"request")
- var imgPath = req.files[0].path
+  let notchObj = new Notch ({
+    title:req.body.title,
+    category:req.body.category,
+    userId:req.session.userId,
+    description:req.body.description,
+    latitude:req.body.latitude,
+    longitude:req.body.longitude,
 
- let notchObj = new Notch ({
-  title:req.body.title,
-  category:req.body.category,
-  userId:req.session.userId,
-  description:req.body.description,
-  latitude:req.body.latitude,
-  longitude:req.body.longitude,
+  })
+  notchObj.img.data= fs.readFileSync(imgPath);
+  notchObj.img.contentType='image/JPG'
 
+  notchObj.save(function (err, notchObj) {
+    if (err) throw err;
 
-})
- notchObj.img.data= fs.readFileSync(imgPath);
- notchObj.img.contentType='image/JPG'
-//  console.log(notchObj.i)
-//  console.log("============================================================")
-notchObj.save(function (err, notchObj) {
-  if (err) throw err;
+    console.error('saved img to mongo');
+  });
 
-  console.error('saved img to mongo');
-});
-//  console.log(notchObj)
-
-//  notch.img.contentType = 'jpg';
-
-// Notch.create(notchObj).then(data => {
-//             // console.log(data);
-//             res.send('success');
-//           }).catch(err => {   
-//             console.log(err);
-//             res.send('unsuccessful');
-//           })
 });
 
 router.post('/getNotches', actions.getNotches);
 router.get('/notches', actions.getAllNotches);
-
 router.get('/findone/:id', actions.findOne);
 router.get('/findoneimage/:id', actions.findOneImage);
-
-router.post('/userNotches', actions.userNotches);
-
+router.get('/userNotches', actions.userNotches);
 router.post('/deleteNotch', actions.deleteNotch);
 router.get('/notches/list_by_category/:category', actions.searchNotches);
 

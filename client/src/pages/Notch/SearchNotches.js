@@ -17,8 +17,9 @@ class SearchNotches extends React.Component{
     this.changeSearchUsername = this.changeSearchUsername.bind(this)
     this.search = this.search.bind(this)
     this.state = {
+
       searchCategory: ''
-    }
+}
   }
 
   changeSearchCategory(event){
@@ -40,13 +41,8 @@ console.log(this.state.searchCategory)
     .then(searchdata =>{
       console.log("searchdata",searchdata)
       this.props.setFilteredNotches(searchdata.data)
-      
-    })
-
-
-
-  }
-
+  })
+}
   render(){
     return (
       <Grid container>
@@ -66,6 +62,7 @@ console.log(this.state.searchCategory)
       onChange={this.changeSearchCategory}
       label='search by'
       >
+
       <MenuItem key='all' value='All'>All</MenuItem>
       <MenuItem key='art' value='Art'>Art</MenuItem>
       <MenuItem key='shows' value='Shows'>Shows</MenuItem>
@@ -73,6 +70,7 @@ console.log(this.state.searchCategory)
       <MenuItem key='animal' value='Animal'>Animal</MenuItem>
       <MenuItem key='outdoor' value='Outdoor'>Outdoor</MenuItem>
       <MenuItem key='lifestyle' value='Lifestyle'>Lifestyle</MenuItem>
+
       </TextField>
       </Grid>
       <Grid item lg={4} md={4} sm={4} xs={3}>

@@ -84,7 +84,7 @@ changeDescription(event){
 
 addNotch(){
   var _this = this;
-  //var request_url = $SERVER + '/experience/create/'
+  
   const formData = new FormData()
   formData.append('file', this.state.img)
   formData.append('username', this.props.username)
@@ -98,16 +98,6 @@ addNotch(){
       'content-type':'multipart/form-data'
     }
   }
-
-  // const notchData = {
-  //   title:this.state.title,
-  //   category:this.state.category,
-  //   description:this.state.description,
-  //   latitude:this.state.latitude,
-  //   longitude:this.state.longitude,
-  //   img:this.state.img
-
-  // }
 
   
 

@@ -1,7 +1,6 @@
 
 import axios from "axios";
-//const APIKEY = "2cf05646712d49639c765623bbbb99ea";
-//const queryURLBase = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBZh02mPHBCAq3ZCKxRCKJwjx0e_fgYi5Y&callback=initMap"
+
 export default {
 
 
@@ -33,11 +32,15 @@ export default {
 		console.log(notchid	, "this is the notchid")
 		return axios.get('/findoneimage/'+ notchid)
 	},
+	searchData:function(category){
+		return axios.get('/notches/list_by_category/'+ category)
+	},
 	userNotches:function(){
-		return axios.post('/userNotches')
+
+		return axios.get('/userNotches')
 	},
 	searchData:function(category){
         return axios.get('/notches/list_by_category/'+ category)
     }
-
+		
 };
