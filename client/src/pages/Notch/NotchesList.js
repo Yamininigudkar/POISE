@@ -112,6 +112,7 @@ render(){
     key={notch.title}
     title={notch.title.toUpperCase()}
     style={{backgroundColor: 'skyblue'}}
+    
     >
     </CardHeader>
     <CardContent>
@@ -121,7 +122,9 @@ render(){
     <Typography key={notch.description} component='p'>
     Experience: {notch.description}
     </Typography>
+
     <Button  onClick={() => this.openNotch(notch._id)} >View Notch</Button>
+
     <Dialog
     
     open={this.state.notchOpened === notch._id }
