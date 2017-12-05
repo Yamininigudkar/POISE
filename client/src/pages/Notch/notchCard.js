@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { 
+import {
   Grid, Typography, Select,
   Divider, TextField, Button,Paper
 } from 'material-ui'
@@ -49,6 +49,7 @@ const MyMapComponent = compose(
         notchData:{},
         image:'',
         isMarkerShown:true
+
 
       }
 
@@ -129,5 +130,4 @@ const MyMapComponent = compose(
        )
     }
   }
-
   export default NotchCard

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {
-  Avatar, Typography, IconButton
+  Avatar, Typography, IconButton,Button
 } from 'material-ui'
 import Card, {CardHeader, CardMedia, CardContent, CardActions} from 'material-ui/Card'
 import {
@@ -28,13 +28,18 @@ const UserNotchCard = (props) => (
   />
   <CardMedia image={props.imgUrl} title="Image Title" >
   <img src={props.imgUrl} style={{width:500}}/>
+ 
   </CardMedia>
   <CardContent>
   <Typography component="p">
   {props.description}
   </Typography>
+  <Button raised id='Remove'  color='primary' style={{margin:10}}>
+        Remove
+        </Button>
   </CardContent>
   </Card>
+
   )
 
   export default UserNotchCard

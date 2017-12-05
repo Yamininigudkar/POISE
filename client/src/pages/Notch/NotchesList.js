@@ -15,11 +15,13 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
+    
   },
   gridList: {
     width: 550,
     height: 500,
-    overflowY: 'auto',
+    overflowY: 'scroll',
+
   }
 };
 
@@ -77,7 +79,7 @@ render(){
    <Grid container>
    <Grid item lg={12} md={12} sm={12} xs={12}>
    <center>
-   <Typography type='heading' component='h1' color='primary'>
+   <Typography type='heading' component='h1' color='primary' >
    Notches List
    </Typography>
    </center>
@@ -95,8 +97,9 @@ render(){
    <Grid item lg={8} md={8} sm={8} xs={8} >
    <div style={styles.root}>
    <GridList
-   cellHeight= {180}
-   style={styles.gridList}
+   cellHeight= {250}
+   
+    style={styles.gridList}
    id="notchlist"
    >
    {this.state.notches.map(notch => (
@@ -123,7 +126,8 @@ render(){
     Experience: {notch.description}
     </Typography>
 
-    <Button  onClick={() => this.openNotch(notch._id)} >View Notch</Button>
+    <Button raised id='View Notch'  onClick={() => this.openNotch(notch._id)} color='primary' style={{margin:10}} >View Notch</Button>
+    
 
     <Dialog
     
