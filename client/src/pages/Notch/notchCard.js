@@ -22,7 +22,7 @@ const styles = {
 
 const MyMapComponent = compose(
   withProps({
-    googleMapURL: "https:/"+"/maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: "https:/"+"/maps.googleapis.com/maps/api/js?key=AIzaSyBZh02mPHBCAq3ZCKxRCKJwjx0e_fgYi5Y&callback=initMap",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `200px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
