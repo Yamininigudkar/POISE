@@ -146,8 +146,8 @@ showLogin(){
 		return(
 			<Grid container>
 			<Grid item lg={12} md={12} sm={12} xs={12} id='item-username'>
-			<center>
-			<Typography type='heading' component='h4' color='primary' style={{margin:10}}>
+			<center>👤
+			<Typography type='heading' component='h4' color='primary' style={{margin:'15px'}}>
 			Welcome<br/> <span id="username">{this.state.firstname}</span><span id="lastname"> {this.state.lastname}</span>
 			</Typography>
 			<Grid item lg={12} md={12} sm={12} xs={12} />
@@ -155,7 +155,7 @@ showLogin(){
 			<Divider/>
 			<Grid item lg={12} md={12} sm={12} xs={12} >
 			<center>
-			<Button  color='primary' onClick={this.openPersonalNotches} >
+			<Button  color='primary' onClick={this.openPersonalNotches} style={{margin:'15px'}}>
 			View Your Notches
 			</Button>
 			</center>
