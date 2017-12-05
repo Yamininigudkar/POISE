@@ -169,7 +169,7 @@ class Login extends React.Component{
 						avatarLetter={notch.title[0].toUpperCase()}
 						title={notch.title}
 						description={notch.description}
-						imgUrl={'/'+'/localhost:3001/findoneimage/' + notch._id}
+						imgUrl={'https:/'+'/notchme.herokuapp.com/findoneimage/' + notch._id}
 						timestamp={notch.date}
 						/>
 						))

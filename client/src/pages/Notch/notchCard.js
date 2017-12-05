@@ -26,7 +26,7 @@ class NotchCard extends React.Component{
 
       notchData:{},
       image:''
-      
+
     }
 
   }
@@ -40,7 +40,7 @@ class NotchCard extends React.Component{
     .then(res =>{
       console.log(res, "this came back after")
       this.setState({notchData:res.data})
-      this.setState({image:'/'+'/localhost:3001/findoneimage/'+this.props.data._id})
+      this.setState({image: 'https:/'+'/notchme.herokuapp.com/findoneimage/'+this.props.data._id})
     })
 
     
