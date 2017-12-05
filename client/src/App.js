@@ -10,7 +10,7 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       ...green,
-      500: '#37a000'
+      500: '#94E90D'
     }, 
     white: {
       500: '#ffffff'
@@ -19,14 +19,14 @@ const theme = createMuiTheme({
 })
 
 const App = () =>
-  <Router>
-    <MuiThemeProvider theme={theme} >
-      <Switch>
-        <Route exact path="/" component={Notches} />
-        <Route exact path='/leftbar' component={Leftbar} />
-        <Route exact path="/search" component={Notches} />
-      </Switch>
-    </MuiThemeProvider>
-  </Router>;
+<Router>
+<MuiThemeProvider theme={theme} >
+<Switch>
+<Route exact path="/" component={Notches} />
+<Route exact path='/leftbar' component={Leftbar} />
+<Route exact path="/search" component={Notches} />
+</Switch>
+</MuiThemeProvider>
+</Router>;
 
 export default App;

@@ -20,7 +20,6 @@ app.use(session({
 	saveUninitialized: false, cookie: { maxAge: 6000000 }
 }))
 
-
 //Requiring the routes from the controllers.js file
 app.use('/', routes);
 
@@ -33,6 +32,12 @@ mongoose.connect(
 		useMongoClient: true
 	}
 	);
+
+const Notch = require('./models/notch')
+app.get('/notch/123/img', (req, res) => {
+	res.contentType('image/jpg')
+	Notch.findOne({_id: "5a25a0c32db4d241108cb43f"}).then(notch => res.send(notch.img.data))
+})
 
 // Start the API server
 app.listen(PORT, function() {

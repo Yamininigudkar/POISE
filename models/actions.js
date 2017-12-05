@@ -56,8 +56,8 @@ module.exports = {
 
         if (req.body.category) 
         {
-         
-         Notch.find({"category":req.body.category}, function (err, data){
+
+           Notch.find({"category":req.body.category}, function (err, data){
             if (err) {
                 console.log(err);
                 res.send('unsuccessful');
@@ -93,40 +93,67 @@ module.exports = {
 },
 
 findOne: function (req, res) {
-        // console.log(req.body);
-        Notch.findById(req.body.id, function (err, data) {
-            if (err) {
-                console.log(err);
-                res.send('unsuccessful');
-            } else {
-                // console.log('found one');
-                // console.log(data);
-                res.send(data);
-            }
-        })
-    },
+    // console.log(req.body);
+    //res.contentType('image/jpg')
+    console.log("this is the req")
+    //res.contentType('image/jpg')
+    Notch.findOne({_id:req.params.id}).then(notch => {
 
-    userNotches: function(req, res) {
-        console.log(req.body);
-        Notch.find({"userId": req.session.userId}, function(err, data) {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log('user Notches');
+        console.log("yeeessss")
+        res.send(notch)
+        //res.send(notch.img.data)
+
+    })
+},
+findOneImage: function (req, res) {
+    // console.log(req.body);
+    //res.contentType('image/jpg')
+    console.log("this is the req")
+    res.contentType('image/jpg')
+    //res.contentType('image/jpg')
+    Notch.findOne({_id:req.params.id}).then(notch => {
+
+        console.log("yeeessss")
+        res.send(notch.img.data)
+        //res.send(notch.img.data)
+
+    })
+},
+// findOne: function (req, res) {
+//         // console.log(req.body);
+//         Notch.findById(req.body.id, function (err, data) {
+//             if (err) {
+//                 console.log(err);
+//                 res.send('unsuccessful');
+//             } else {
+//                 // console.log('found one');
+//                 // console.log(data);
+//                 res.send(data);
+//             }
+//         })
+//     },
+
+userNotches: function(req, res) {
+    console.log(req.body);
+    Notch.find({"userId": req.session.userId}, function(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('user Notches');
                 //console.log(data);
                 res.send(data);
             }
         })
-    },
+},
 
-    deleteNotch: function(req, res) {
-        Notch.findByIdAndRemove(req.body.id, function(err, data) {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log(data);
-                res.send('success');
-            }
-        })
-    }
+deleteNotch: function(req, res) {
+    Notch.findByIdAndRemove(req.body.id, function(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(data);
+            res.send('success');
+        }
+    })
+}
 }

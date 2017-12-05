@@ -26,7 +26,12 @@ export default {
 		return axios.get('/notches')
 	},
 	notchDetails:function(notchid){
-		return axios.post('/findone',notchid)
+		console.log(notchid	, "this is the notchid")
+		return axios.get('/findone/'+ notchid)
+	},
+	imageDetails:function(notchid){
+		console.log(notchid	, "this is the notchid")
+		return axios.get('/findoneimage/'+ notchid)
 	},
 	userNotches:function(){
 		return axios.post('/userNotches')

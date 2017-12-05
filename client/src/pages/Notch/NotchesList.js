@@ -20,7 +20,7 @@ const styles = {
     width: 550,
     height: 500,
     overflowY: 'auto',
-  },
+  }
 };
 
 
@@ -35,7 +35,8 @@ class NotchesList extends React.Component{
   this.closeNotch = this.closeNotch.bind(this)
   this.state = {
    searchBy: 'radius',
-   notches:[]
+   notches:[],
+   notchOpened: false
  }
 }
 componentDidMount(){
@@ -46,9 +47,9 @@ changeSearchBy(event){
    searchBy: event.target.value
  })
 }
-openNotch(){
+openNotch(id){
   this.setState({
-    notchOpened: true,
+    notchOpened: id,
   })
 }
 
@@ -104,10 +105,10 @@ render(){
     <Card>
     <CardHeader
     avatar={
-                            <Avatar aria-label='Recipe' style={{ backgroundColor:'green'}}>
-                              📍
-                            </Avatar>
-                          }
+      <Avatar aria-label='Recipe' style={{ backgroundColor:'green'}}>
+      📍
+      </Avatar>
+    }
     key={notch.title}
     title={notch.title.toUpperCase()}
     style={{backgroundColor: 'skyblue'}}
@@ -120,14 +121,14 @@ render(){
     <Typography key={notch.description} component='p'>
     Experience: {notch.description}
     </Typography>
-    <Button  onClick={this.openNotch} >View Notch</Button>
+    <Button  onClick={() => this.openNotch(notch._id)} >View Notch</Button>
     <Dialog
     
-    open={this.state.notchOpened}
+    open={this.state.notchOpened === notch._id }
     onRequestClose={this.closeNotch} id='NotchCard-Modal'>
     <NotchCard 
     
-    id={notch._id} 
+    data={notch} 
     />
     </Dialog>
     </CardContent>
@@ -148,7 +149,7 @@ render(){
 
    </Paper>
    )
-}
+ }
 }
 
 export default NotchesList
