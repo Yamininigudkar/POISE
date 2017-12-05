@@ -58,6 +58,7 @@ render(){
        <Grid item lg={12} md={12} sm={12} >
        <center>
        <Typography type='heading' component='h1' color='primary'>
+       
        {this.state.notchData.title}
        </Typography>
        </center>
