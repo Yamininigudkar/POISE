@@ -55,6 +55,7 @@ class Login extends React.Component{
 		this.setState({
 			password: event.target.value
 		})
+
 	}
 
 	login(event){
@@ -79,46 +80,9 @@ class Login extends React.Component{
 				this.setState({loggedIn:true})
 				this.setState({firstname:res.data.firstName})
 				this.setState({lastname:res.data.lastName})
-			}
-		})
+				console.log(res.data)
 
-		.catch(err => console.log(err));
-	}
-
-
-	signup(){
-		console.log('going to signup')
-	}
-
-	handleOpen(){
-		this.setState({open: true});
-	};
-
-	handleClose(){
-		this.setState({open: false});
-	};
-
-	logOut(){
-		API.userlogOut()
-		.then(res =>{
-			console.log(res)
-			console.log("Logout successful")
-			this.setState({loggedIn:false})
-			this.setState({username:""})
-			this.setState({password:""})
-		})
-
-	}
-	openPersonalNotches(){
-		API.userNotches()
-		.then(res =>{
-			this.setState({
-				userNotches:res.data,
-				personalNotchesOpened: true
-			})
-			console.log(res.data)
-
-		})
+			}})
 
 	}
 	closePersonalNotches(){
@@ -146,8 +110,8 @@ class Login extends React.Component{
 			return(
 				<Grid container>
 				<Grid item lg={12} md={12} sm={12} xs={12} id='item-username'>
-				<center>
-				<Typography type='heading' component='h4' color='primary' style={{margin:10}}>
+				<center>👤
+				<Typography type='heading' component='h4' color='primary' style={{margin:'15px'}}>
 				Welcome<br/> <span id="username">{this.state.firstname}</span><span id="lastname"> {this.state.lastname}</span>
 				</Typography>
 				<Grid item lg={12} md={12} sm={12} xs={12} />
@@ -155,7 +119,7 @@ class Login extends React.Component{
 				<Divider/>
 				<Grid item lg={12} md={12} sm={12} xs={12} >
 				<center>
-				<Button  color='primary' onClick={this.openPersonalNotches} >
+				<Button  color='primary' onClick={this.openPersonalNotches} style={{margin:'15px'}}>
 				View Your Notches
 				</Button>
 				</center>
@@ -170,10 +134,106 @@ class Login extends React.Component{
 						avatarLetter={notch.title[0].toUpperCase()}
 						title={notch.title}
 						description={notch.description}
-						imgUrl={'/'+'/localhost:3001/findoneimage/' + notch._id}
+						imgUrl={notch.imgUrl}
 						timestamp={notch.date}
 						/>
 						))
+					
+				}
+			})
+
+			.catch(err => console.log(err));
+		}
+
+
+		signup(){
+			console.log('going to signup')
+		}
+
+		handleOpen(){
+			this.setState({open: true});
+		};
+
+		handleClose(){
+			this.setState({open: false});
+		};
+
+		logOut(){
+			API.userlogOut()
+			.then(res =>{
+				console.log(res)
+				console.log("Logout successful")
+				this.setState({loggedIn:false})
+				this.setState({username:""})
+				this.setState({password:""})
+			})
+
+		}
+		openPersonalNotches(){
+			API.userNotches()
+			.then(res =>{
+				this.setState({
+					userNotches:res.data,
+					personalNotchesOpened: true
+				})
+				console.log(res.data)
+
+			})
+
+		}
+		closePersonalNotches(){
+			this.setState({
+				personalNotchesOpened: false
+			})
+		}
+
+
+		openAddNotch(){
+			this.setState({
+				addNotchOpened: true
+			})
+		}
+
+		closeAddNotch(){
+			this.setState({
+				addNotchOpened: false
+			})
+		}
+
+
+		showLogin(){
+			if(this.state.loggedIn){
+				return(
+					<Grid container>
+					<Grid item lg={12} md={12} sm={12} xs={12} id='item-username'>
+					<center>
+					<Typography type='heading' component='h4' color='primary' style={{margin:10}}>
+					Welcome<br/> <span id="username">{this.state.firstname}</span><span id="lastname"> {this.state.lastname}</span>
+					</Typography>
+					<Grid item lg={12} md={12} sm={12} xs={12} />
+					</center>
+					<Divider/>
+					<Grid item lg={12} md={12} sm={12} xs={12} >
+					<center>
+					<Button  color='primary' onClick={this.openPersonalNotches} >
+					View Your Notches
+					</Button>
+					</center>
+					<Dialog 
+					onRequestClose={this.closePersonalNotches}
+					open={this.state.personalNotchesOpened} 
+					style={{padding: '20px'}}
+					> 
+					{
+						this.state.userNotches.map((notch) => (
+							<UserNotchCard 
+							avatarLetter={notch.title[0].toUpperCase()}
+							title={notch.title}
+							description={notch.description}
+							imgUrl={'/'+'/localhost:3001/findoneimage/' + notch._id}
+							timestamp={notch.date}
+							/>
+							))
 					}
 					</Dialog>
 					</Grid>
@@ -202,13 +262,13 @@ class Login extends React.Component{
 					)
 
 
-				}else if(this.state.register){
-					return (
+			}else if(this.state.register){
+				return (
 					<div>Registered</div>
 					)
-				}
-				else {
-					return(
+			}
+			else {
+				return(
 					<Grid container>
 					<Grid item lg={12} md={12} sm={12} xs={12} id='item-username'>
 					<TextField fullWidth
@@ -243,20 +303,20 @@ class Login extends React.Component{
 					</Grid>
 					)
 
-				}
 			}
-			render() {
-				return (
+		}
+		render() {
+			return (
 				<div>
 				{this.showLogin()}
 				</div>
 				)
-			}
-
-
-
-
 		}
 
-		export default Login
+
+
+
+	}
+
+	export default Login
 

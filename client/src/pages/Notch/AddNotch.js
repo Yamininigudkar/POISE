@@ -118,25 +118,25 @@ render(){
   return (
     <Grid container id='add-notch-dialog' style={{ margin: '10px'}}>
     <Grid item lg={1} md={1} sm={1} > </Grid>
-    <Grid item lg={10} md={10} sm={10} >
+    <Grid item lg={10} md={10} sm={10} xs={10} >
     <Grid container>
     <Grid item lg={12} md={12} sm={12} >
     <center>
-    <Typography type='heading' component='h1' color='primary'>
-    Add a Notch
+    <Typography type='headline' component='h1' style={{color: 'white', fontSize: '2.6em',backgroundColor: 'skyblue'}}> <em>Add a Notch</em>
+    
     </Typography>
     </center>
     </Grid>
-    <Grid item lg={12} md={12} sm={12} >
+    <Grid item lg={12} md={12} sm={12} xs={12} >
     <Divider />
     </Grid>
 
-    <Grid item lg={6} md={6} sm={6} >
+    <Grid item lg={6} md={6} sm={6} xs={6}>
     <Typography component='h3' type='body'>
     Category
     </Typography>
     </Grid>
-    <Grid item lg={6} md={6} sm={6} >
+    <Grid item lg={6} md={6} sm={6} xs={6}>
     <FormControl fullWidth >
     <Select
     value={this.state.category}
@@ -155,42 +155,42 @@ render(){
     </FormControl>
 
     </Grid>
-    <Grid item lg={12} md={12} sm={12} >
+    <Grid item lg={12} md={12} sm={12} xs={12}>
     <Divider />
     </Grid>
-    <Grid item lg={12} md={12} sm={12} >
+    <Grid item lg={12} md={12} sm={12} xs={12} >
     <Grid container>
-    <Grid item lg={6} md={6} sm={6} >
+    <Grid item lg={6} md={6} sm={6} xs={6} >
     <TextField id='lat' value={this.state.latitude}
     label='latitude'
     />
     </Grid>
-    <Grid item lg={6} md={6} sm={6} >
+    <Grid item lg={6} md={6} sm={6} xs={6} >
     <TextField id='lng' value={this.state.longitude}
     label='longitude'
     />
     </Grid>
     </Grid>
     </Grid>
-    <Grid item lg={12} md={12} sm={12} >
+    <Grid item lg={12} md={12} sm={12} xs={12} >
     <Divider />
     </Grid>
-    <Grid item lg={12} md={12} sm={12} >
+    <Grid item lg={12} md={12} sm={12} xs={12} >
     <TextField  fullWidth id='Title' value={this.state.title}
     onChange={this.changeTitle} label='Title' 
     />
     </Grid>
-    <Grid item lg={12} md={12} sm={12} >
+    <Grid item lg={12} md={12} sm={12} xs={12} >
     <Divider />
     </Grid>
-    <Grid item lg={12} md={12} sm={12} >
+    <Grid item lg={12} md={12} sm={12} xs={12} >
     <TextField multiline fullWidth
     id='experience' value={this.state.description}
     onChange={this.changeDescription} label='Description'
     rows={3}
     />
     </Grid>
-    <Grid item lg={12} md={12} sm={12} >
+    <Grid item lg={12} md={12} sm={12} xs={12}>
     <TextField fullWidth
     id='image' value={this.state.image}
     onChange={this.changeImage} label='image'
@@ -200,14 +200,14 @@ render(){
     </Grid>
     <Grid item lg={12} md={12} sm={12} >
     <center>
-    <Button raised color='primary' onClick={this.addNotch}>
+    <Button raised color='primary' onClick={this.addNotch} >
     Add Notch
     </Button>
     </center>
     </Grid>
     </Grid>
     </Grid>
-    <Grid item lg={1} md={1} sm={1} > </Grid>
+    <Grid item lg={1} md={1} sm={1} sm={1}> </Grid>
     </Grid>
     )
   }

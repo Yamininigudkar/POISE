@@ -27,7 +27,7 @@ const UserNotchCard = (props) => (
   subheader={props.timestamp}
   />
   <CardMedia image={props.imgUrl} title="Image Title" >
-  <img src={props.imgUrl} style={{width:500, height: 300}}/>
+  <img src={props.imgUrl} style={{width:500}}/>
   </CardMedia>
   <CardContent>
   <Typography component="p">
