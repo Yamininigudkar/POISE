@@ -146,6 +146,19 @@ searchNotches: function(req, res) {
         }
     })
 
+},
+searchNotchesKeyWord: function(req, res) {
+    let keyWord = req.params.keyWord
+   // db.products.find( { sku: { $regex: /^ABC/i } } )
+   Notch.find({ title: { $regex: `/${keyWord}/`} }, function(err, data) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log('search Notches');
+        res.json(data);
+    }
+})
+
 }
 
 
