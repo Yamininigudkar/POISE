@@ -5,6 +5,7 @@ import {
 	Button, Paper
 } from 'material-ui'
 import Dialog, { DialogTitle } from 'material-ui/Dialog'
+import AlertContainer from 'react-alert'
 import { blue } from 'material-ui/colors'
 import AddNotch from './AddNotch'
 import Main from './categoryfilter'
@@ -38,7 +39,8 @@ class Login extends React.Component{
 			firstname:'',
 			lastname:'',
 			personalNotchesOpened:false,
-			userNotches:[]
+			userNotches:[],
+			invalid: false
 
 		}
 	}
@@ -68,12 +70,14 @@ class Login extends React.Component{
 		API.userLogin(userData)
 		.then(res => 
 		{
+			console.log(res, "this is the response")
 			if(res.data==='unsuccessful'){
-
-				alert("incorrect username ot password")
+				console.log("unsesessful", this.state)
+				this.setState({invalid: true})
+				this.showAlert()
 			} else {
 				console.log("Response",res)
-				alert("logged")
+				
 
 				this.setState({loggedIn:true})
 				this.setState({firstname:res.data.firstName})
@@ -139,6 +143,22 @@ class Login extends React.Component{
 		})
 	}
 
+	  alertOptions = {
+	    offset: 14,
+	    position: 'bottom left',
+	    theme: 'dark',
+	    time: 9000,
+	    transition: 'scale'
+	  }
+	 
+	  showAlert = () => {
+	  	let app = this
+	    this.msg.error('incorrect username or password', {
+	      time: 2000,
+	      type: 'success',
+	    })
+	  }
+	 
 
 	showLogin(){
 		if(this.state.loggedIn){
@@ -169,7 +189,7 @@ class Login extends React.Component{
 						avatarLetter={notch.title[0].toUpperCase()}
 						title={notch.title}
 						description={notch.description}
-						imgUrl={'https:/'+'/notchme.herokuapp.com/findoneimage/' + notch._id}
+						imgUrl={'/'+'/localhost:3001/findoneimage/' + notch._id}
 						timestamp={notch.date}
 						/>
 						))
@@ -245,10 +265,14 @@ class Login extends React.Component{
 		}
 	}
 	render() {
+		console.log("this is the new render", this.state)
 		return (
 			<div>
-			{this.showLogin()}
-			</div>
+				{this.showLogin()} 
+				<div>
+					<AlertContainer ref={a => this.msg = a} {...this.alertOptions} />    
+		     	</div>
+		     </div>
 			)
 	}
 
