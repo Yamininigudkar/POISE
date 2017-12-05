@@ -35,6 +35,9 @@ export default {
 	},
 	userNotches:function(){
 		return axios.post('/userNotches')
-	}
+	},
+	searchData:function(category){
+        return axios.get('/notches/list_by_category/'+ category)
+    }
 
 };

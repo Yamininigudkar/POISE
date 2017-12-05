@@ -138,5 +138,6 @@ router.get('/findoneimage/:id', actions.findOneImage);
 router.post('/userNotches', actions.userNotches);
 
 router.post('/deleteNotch', actions.deleteNotch);
+router.get('/notches/list_by_category/:category', actions.searchNotches);
 
 module.exports = router;

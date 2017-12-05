@@ -29,7 +29,7 @@ class Navbar extends React.Component{
       </Grid>
       <Grid item lg={10} md={10} sm={10} xs={10}>
       
-      <SearchNotches />
+      <SearchNotches setFilteredNotches={this.props.setFilteredNotches}/>
       </Grid>
       <Grid item lg={2} md={2} sm={2} xs={2} > </Grid>
       </Grid>

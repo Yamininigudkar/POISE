@@ -70,7 +70,7 @@ displayNotches(){
 }
 render(){
   return (
-   <Paper id='right-paper' style={{padding: '10px'}}>
+   <Paper id='right-paper'>
    
    <Grid container>
    <Grid item lg={12} md={12} sm={12} xs={12} >

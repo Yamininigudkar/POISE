@@ -18,13 +18,26 @@ import NotchCard from './notchCard'
 
 
 class Notch extends React.PureComponent {
+  constructor(props){
+    super(props)
+    this.setFilteredNotches = this.setFilteredNotches.bind(this)
+    this.state =
+    {
+      filteredNotches: []
+    }
+  }
+  setFilteredNotches(filteredNotches){
+    this.setState({
+      filteredNotches: filteredNotches
+    })
+  }
 
 
   render() {
     return (
       <Grid container>
-      <Grid item lg={12} md={12} sm={12} xs={12} >
-      <Navbar />
+      <Grid item lg={12} md={12} sm={12} >
+      <Navbar setFilteredNotches={this.setFilteredNotches} />
       </Grid>
       <Grid item lg={2} md={6} sm={6} xs={12} id='left-bar-col'>
       <Leftbar />
@@ -39,6 +52,15 @@ class Notch extends React.PureComponent {
       
       />
       </Grid>
+      {
+                  this.state.filteredNotches.map(notch => (
+                    <Grid item lg={6} md={6} sm={6} xs={6}>
+                      <NotchCard 
+                        data={notch} 
+                      />
+                    </Grid>
+                  ))
+                }
       </Grid>
       </Grid>
       
@@ -48,7 +70,7 @@ class Notch extends React.PureComponent {
       <Grid item lg={3} md={3} sm={3} xs={3}> </Grid>
       </Grid>
       );
-    }
   }
+}
 
-  export default Notch;
+export default Notch;

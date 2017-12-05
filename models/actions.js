@@ -155,5 +155,16 @@ deleteNotch: function(req, res) {
             res.send('success');
         }
     })
+},
+searchNotches: function(req, res) {
+    let category = req.params.category
+    Notch.find({"category": category}, function(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('search Notches');
+            res.json(data);
+        }
+    })
 }
 }

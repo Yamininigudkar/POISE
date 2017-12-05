@@ -170,7 +170,7 @@ showLogin(){
 					avatarLetter={notch.title[0].toUpperCase()}
 					title={notch.title}
 					description={notch.description}
-					imgUrl={notch.imgUrl}
+					imgUrl={'/'+'/localhost:3001/findoneimage/' + notch._id}
 					timestamp={notch.date}
 					/>
 					))

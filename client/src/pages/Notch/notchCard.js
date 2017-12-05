@@ -36,7 +36,7 @@ componentWillMount(){
     console.log("notchdata",this.state.notchData)
     
 
-    API.notchDetails(this.props.data._id)
+    API.notchDetails(this.props.data.id)
     .then(res =>{
         console.log(res, "this came back after")
         this.setState({notchData:res.data})
@@ -69,6 +69,12 @@ render(){
        </center>
        </Grid>
        <Divider/>
+       <Grid item lg={12} md={12} sm={12} >
+       <Typography type='heading' component='h4' >
+       Category: {this.state.notchData.category}
+       </Typography>
+
+       </Grid>
        <Grid item lg={12} md={12} sm={12} >
        <Typography type='heading' component='p' >
        {this.state.notchData.description}
