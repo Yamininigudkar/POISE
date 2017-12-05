@@ -10,6 +10,7 @@ import {
 import { red } from 'material-ui/colors'
 
 const UserNotchCard = (props) => (
+  
   <Card style={{margin: 20,width:700}}>
   <CardHeader
   avatar={

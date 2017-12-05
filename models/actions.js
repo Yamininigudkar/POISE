@@ -119,19 +119,7 @@ findOneImage: function (req, res) {
 
     })
 },
-// findOne: function (req, res) {
-//         // console.log(req.body);
-//         Notch.findById(req.body.id, function (err, data) {
-//             if (err) {
-//                 console.log(err);
-//                 res.send('unsuccessful');
-//             } else {
-//                 // console.log('found one');
-//                 // console.log(data);
-//                 res.send(data);
-//             }
-//         })
-//     },
+
 
 userNotches: function(req, res) {
     console.log(req.body);
@@ -155,5 +143,17 @@ deleteNotch: function(req, res) {
             res.send('success');
         }
     })
-}
+},
+searchNotches: function(req, res) {
+    let category = req.params.category
+    Notch.find({"category": category}, function(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('user Notches');
+            res.json(data);
+        }
+    })
+},
+
 }
