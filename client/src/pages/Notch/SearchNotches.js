@@ -6,6 +6,7 @@ import {
 import { MenuItem } from 'material-ui/Menu'
 //import '../styles/search_notches.css'
 import axios from 'axios'
+import API from '../../utils/API';
 //import { $SERVER } from '../utils/server'
 
 class SearchNotches extends React.Component{
@@ -33,18 +34,16 @@ class SearchNotches extends React.Component{
   }
 
   search(){
-    // var request_url = $SERVER + '/experience/list_by_category/'
-    // axios.get(request_url, {
-    //   params:{
-    //     username: this.state.searchUsername,
-    //     category: this.state.searchCategory
-    //   }
-    // })
-    // .then(response => response.data)
-    // .then(response => {
-    //   console.log('response from server:', response)
-    //   this.props.setFilteredNotches(response.data)
-    // })
+
+
+    API.searchData(this.state.searchCategory)
+    .then(searchdata =>{
+      console.log("searchdata",searchdata)
+      
+    })
+
+
+    
   }
 
   render(){

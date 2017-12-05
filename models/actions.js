@@ -27,9 +27,8 @@ module.exports = {
                             password: hash
                             
                         }
-                        // console.log(newUser);
+
                         User.create(newUser).then(data => {
-                            // console.log(data);
                             res.send('success');
                         }).catch(err => {
                             console.log(err);
@@ -37,7 +36,6 @@ module.exports = {
                     });
                 });
             } else {
-                // console.log(user);
                 res.send('unsuccessful');
             }
         });
@@ -57,7 +55,7 @@ module.exports = {
         if (req.body.category) 
         {
 
-           Notch.find({"category":req.body.category}, function (err, data){
+         Notch.find({"category":req.body.category}, function (err, data){
             if (err) {
                 console.log(err);
                 res.send('unsuccessful');
@@ -93,29 +91,23 @@ module.exports = {
 },
 
 findOne: function (req, res) {
-    // console.log(req.body);
-    //res.contentType('image/jpg')
+
     console.log("this is the req")
-    //res.contentType('image/jpg')
     Notch.findOne({_id:req.params.id}).then(notch => {
 
         console.log("yeeessss")
         res.send(notch)
-        //res.send(notch.img.data)
-
+        
     })
 },
 findOneImage: function (req, res) {
-    // console.log(req.body);
-    //res.contentType('image/jpg')
     console.log("this is the req")
     res.contentType('image/jpg')
-    //res.contentType('image/jpg')
     Notch.findOne({_id:req.params.id}).then(notch => {
 
         console.log("yeeessss")
         res.send(notch.img.data)
-        //res.send(notch.img.data)
+
 
     })
 },
@@ -128,10 +120,9 @@ userNotches: function(req, res) {
             console.log(err);
         } else {
             console.log('user Notches');
-                //console.log(data);
-                res.send(data);
-            }
-        })
+            res.send(data);
+        }
+    })
 },
 
 deleteNotch: function(req, res) {
@@ -150,7 +141,7 @@ searchNotches: function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            console.log('user Notches');
+            console.log('search Notches');
             res.json(data);
         }
     })

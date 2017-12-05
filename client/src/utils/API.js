@@ -32,6 +32,9 @@ export default {
 		console.log(notchid	, "this is the notchid")
 		return axios.get('/findoneimage/'+ notchid)
 	},
+	searchData:function(category){
+		return axios.get('/notches/list_by_category/'+ category)
+	},
 	userNotches:function(){
 		return axios.get('/userNotches')
 	}
