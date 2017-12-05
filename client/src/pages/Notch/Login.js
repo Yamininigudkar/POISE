@@ -191,6 +191,8 @@ class Login extends React.Component{
 						description={notch.description}
 						imgUrl={'/'+'/localhost:3001/findoneimage/' + notch._id}
 						timestamp={notch.date}
+						category={notch.category}
+						id={notch._id}
 						/>
 						))
 				}

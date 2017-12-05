@@ -8,14 +8,32 @@ import {
  ExpandMoreIcon, FavoriteIcon, ShareIcon
 } from 'material-ui-icons'
 import { red } from 'material-ui/colors'
+import API from '../../utils/API';
 
-const UserNotchCard = (props) => (
-  
+class UserNotchCard extends React.Component{
+  constructor(props){
+  super(props)
+  this.deleteNotch = this.deleteNotch.bind(this)
+  this.state ={}
+} 
+deleteNotch(){
+  console.log(this.props)
+  API.deleteNotch(this.props.id)
+  .then(res =>{
+    console.log("notch deleted")
+    console.log(res)
+  })
+
+}
+
+
+ render() {
+  return(
   <Card style={{margin: 20,width:700}}>
   <CardHeader
   avatar={
     <Avatar aria-label="Recipe" style={{backgroundColor: "red"}}>
-    {props.avatarLetter}
+    {this.props.avatarLetter}
     </Avatar>
   }
   action={
@@ -23,23 +41,29 @@ const UserNotchCard = (props) => (
     
     </IconButton>
   }
-  title={props.title}
-  subheader={props.timestamp}
+  title={this.props.title}
+  subheader={this.props.timestamp}
   />
-  <CardMedia image={props.imgUrl} title="Image Title" >
-  <img src={props.imgUrl} style={{width:500}}/>
+  <CardMedia image={this.props.imgUrl} title="Image Title" >
+  <img src={this.props.imgUrl} style={{width:500}}/>
  
   </CardMedia>
   <CardContent>
-  <Typography component="p">
-  {props.description}
+
+  <Typography component="h4">
+  Category:{this.props.category}
   </Typography>
-  <Button raised id='Remove'  color='primary' style={{margin:10}}>
+  <Typography component="p">
+  {this.props.description}
+  </Typography>
+  <Button raised id='Remove' onClick={this.deleteNotch}  color='primary' style={{margin:10}}>
         Remove
         </Button>
   </CardContent>
   </Card>
 
   )
+}
+}
 
   export default UserNotchCard

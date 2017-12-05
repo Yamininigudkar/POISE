@@ -27,7 +27,7 @@ class AddNotch extends React.Component{
    this.changeDescription = this.changeDescription.bind(this)
    this.addNotch = this.addNotch.bind(this)
    this.state = {
-    category: 'All',
+    category: ' ',
     title: '',
     description: '',
     latitude:'',
@@ -132,18 +132,17 @@ render(){
     </Grid>
 
     <Grid item lg={6} md={6} sm={6} xs={6}>
-    <Typography component='h3' type='body'>
-    Category
-    </Typography>
+     <h4>Select Category</h4>
     </Grid>
     <Grid item lg={6} md={6} sm={6} xs={6}>
     <FormControl fullWidth >
     <Select
     value={this.state.category}
     onChange={this.changeCategory}
-    id='category' >
+    id='category'
+    label='Select category' >
 
-    <MenuItem value='All' onClick={this.changeCategory}>All</MenuItem>
+    
     <MenuItem value='Art' onClick={this.changeCategory}>Art</MenuItem>
     <MenuItem value='Outdoor' onClick={this.changeCategory}>Outdoor</MenuItem>
     <MenuItem value='Shows' onClick={this.changeCategory}>Shows</MenuItem>
@@ -191,11 +190,9 @@ render(){
     />
     </Grid>
     <Grid item lg={12} md={12} sm={12} xs={12}>
-    <TextField fullWidth
-    id='image' value={this.state.image}
-    onChange={this.changeImage} label='image'
-    rows={3}
-    ></TextField>
+    
+   <h4> Add an Image</h4>
+   
     <input type="file" accept="image/*" onChange={this.changeImage} />
     </Grid>
     <Grid item lg={12} md={12} sm={12} >

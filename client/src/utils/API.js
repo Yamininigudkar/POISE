@@ -41,6 +41,9 @@ export default {
 	},
 	searchData:function(category){
         return axios.get('/notches/list_by_category/'+ category)
+    },
+    deleteNotch:function(id){
+        return axios.post('/deleteNotch', {id})
     }
 		
 };

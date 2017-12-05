@@ -126,6 +126,7 @@ userNotches: function(req, res) {
 },
 
 deleteNotch: function(req, res) {
+    console.log(req.body, "this is the req body")
     Notch.findByIdAndRemove(req.body.id, function(err, data) {
         if (err) {
             console.log(err);

@@ -9,6 +9,7 @@ import { MenuItem } from 'material-ui/Menu'
 import { Clear } from 'material-ui-icons'
 import '../../styles/rightbar.css'
 import API from '../../utils/API';
+import AlertContainer from 'react-alert'
 
 class SignUp extends React.Component{
 
@@ -20,6 +21,7 @@ class SignUp extends React.Component{
     this.changeuserName = this.changeuserName.bind(this)
     this.changePassword = this.changePassword.bind(this)
     this.confirmPassword = this.confirmPassword.bind(this)
+    //this.showAlert=this.showAlert.bind(this)
     this.signUp = this.signUp.bind(this)
     this.state = {
       category: 'first',
@@ -28,8 +30,10 @@ class SignUp extends React.Component{
       username:'',
       password: '',
       confirmPassword:''
+      
     }
   }
+
 
   changeCategory(event){
     this.setState({
@@ -63,6 +67,20 @@ class SignUp extends React.Component{
       confirmpassword: event.target.value
     })
   }
+  alertOptions = {
+      offset: 14,
+      position: 'bottom left',
+      theme: 'dark',
+      time: 9000,
+      transition: 'scale'
+    }
+   
+    showAlert = () => {
+      this.msg.error('Passwords do not match', {
+        time: 2000,
+        type: 'success',
+      })
+    }
 
 
   signUp(event){
@@ -86,14 +104,16 @@ class SignUp extends React.Component{
       .catch(err => console.log(err));
     
     }else {
-      alert("passwords do not match")
+     // alert("passwords do not match")
+      this.showAlert()
+      return
     }
     this.props.handleClose()
 
   }
 
   render(){
-    return (
+    return (   
       <Grid container id='add-notch-dialog' style={{ margin: '10px'}}>
         <Grid item lg={1} md={1} sm={1} > </Grid>
         <Grid item lg={10} md={10} sm={10} >
@@ -108,8 +128,7 @@ class SignUp extends React.Component{
             <Grid item lg={12} md={12} sm={12} >
               <Divider />
             </Grid>
-            
-            <Grid item lg={6} md={6} sm={6} >
+              <Grid item lg={6} md={6} sm={6} >
               <FormControl fullWidth >
                 <Select
                   value={this.state.category}
@@ -123,6 +142,7 @@ class SignUp extends React.Component{
               </FormControl>
 
             </Grid>
+                                   
             <Grid item lg={12} md={12} sm={12} >
               <Divider />
             </Grid>
@@ -135,7 +155,7 @@ class SignUp extends React.Component{
                 </Grid>
                 <Grid item lg={6} md={6} sm={6} >
                   <TextField id='SN' value={this.state.lastName}
-                    fullWidth onChange={this.changelastName} label='Second Name'
+                    fullWidth onChange={this.changelastName} label='Last Name'
                   />
                 </Grid>
               </Grid>
@@ -173,6 +193,7 @@ class SignUp extends React.Component{
                 <Button raised color='primary' onClick={this.signUp}>
                   Submit
                 </Button>
+                <AlertContainer ref={a => this.msg = a} {...this.alertOptions} /> 
               </center>
             </Grid>
           </Grid>

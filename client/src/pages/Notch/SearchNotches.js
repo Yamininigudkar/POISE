@@ -16,6 +16,7 @@ class SearchNotches extends React.Component{
     this.changeSearchCategory = this.changeSearchCategory.bind(this)
     this.changeSearchUsername = this.changeSearchUsername.bind(this)
     this.search = this.search.bind(this)
+    this.clearSearch = this.clearSearch.bind(this)
     this.state = {
 
       searchCategory: ''
@@ -32,6 +33,9 @@ class SearchNotches extends React.Component{
     this.setState({
       searchUsername: event.target.value
     })
+  }
+  clearSearch(){
+    this.props.setFilteredNotches([])
   }
 
   search(){
@@ -55,15 +59,15 @@ console.log(this.state.searchCategory)
       </Typography>
       </center>
       </Grid>
-      <Grid item lg={2} md={2} sm={2} xs={3}>
+      <Grid item lg={4} md={4} sm={4} xs={4}>
       <TextField fullWidth select
       id='search-by'
       value={this.state.searchCategory}
       onChange={this.changeSearchCategory}
-      label='search by'
+      label='search by category'
       >
 
-      <MenuItem key='all' value='All'>All</MenuItem>
+      
       <MenuItem key='art' value='Art'>Art</MenuItem>
       <MenuItem key='shows' value='Shows'>Shows</MenuItem>
       <MenuItem key='sports' value='Sports'>Sports</MenuItem>
@@ -73,19 +77,18 @@ console.log(this.state.searchCategory)
 
       </TextField>
       </Grid>
-      <Grid item lg={4} md={4} sm={4} xs={3}>
-      <TextField id='search-box' fullWidth
-      value={this.state.searchUsername}
-      onChange={this.changeSearchUsername}
-      label='search'
-      />
-      </Grid>
+      
       <Grid item lg={4} md={4} sm={4} xs={3}>
       <Button raised id='search-button'
       color='primary' onClick={this.search}>
       Search
       </Button>
+      <Button raised id='search-button'
+      color='primary' onClick={this.clearSearch}>
+      Clear Search
+      </Button>
       </Grid>
+      
       </Grid>
       </Grid>
       </Grid>
