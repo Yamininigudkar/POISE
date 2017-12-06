@@ -32,8 +32,9 @@ deleteNotch(){
   <Card style={{margin: 20,width:700}}>
   <CardHeader
   avatar={
-    <Avatar aria-label="Recipe" style={{backgroundColor: "red"}}>
-    {this.props.avatarLetter}
+    <Avatar aria-label="Recipe" style={{backgroundColor: '#3CB371'}}>
+  
+    📍
     </Avatar>
   }
   action={

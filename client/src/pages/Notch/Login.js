@@ -213,7 +213,7 @@ class Login extends React.Component{
 				</Grid>
 				<Divider />
 				<center>
-				<Button raised id='logout' onClick={this.logOut} color='primary' style={{margin:10}}>
+				<Button raised id='logout' onClick={this.logOut} color='primary' style={{margin:50}}>
 				Logout
 				</Button>
 				</center>

@@ -79,7 +79,7 @@ render(){
    <Grid container>
    <Grid item lg={12} md={12} sm={12} xs={12}>
    <center>
-   <Typography type='heading' component='h1' color='primary' >
+   <Typography type='heading' component='h1' color='primary' style={{backgroundColor: 'skyblue'}} >
    Notches List
    </Typography>
    </center>
@@ -108,7 +108,7 @@ render(){
     <Card>
     <CardHeader
     avatar={
-      <Avatar aria-label='Recipe' style={{ backgroundColor:'green'}}>
+      <Avatar aria-label='Recipe' style={{ backgroundColor:'#3CB371'}}>
       📍
       </Avatar>
     }

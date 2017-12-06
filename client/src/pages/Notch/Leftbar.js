@@ -49,7 +49,7 @@ class Leftbar extends React.Component{
       <Grid container id='cont-left-bar'>
       <Grid item lg={12} md={12} sm={12} xs={12} id='item-logo' >
       <center>
-      <Typography type='headline' component='h1' style={{color: 'white', fontSize: '2.6em',backgroundColor: 'skyblue'}}> <em>Notch📍</em>
+      <Typography type='heading' component='h4' style={{color: '#3CB371',fontSize : '2.6em',backgroundColor: 'skyblue'}}> <em>Notch📍</em>
       </Typography>
       </center>
       </Grid>
@@ -87,7 +87,7 @@ class Leftbar extends React.Component{
       <Grid item lg={2} md={2} sm={2} > </Grid>
       <Grid item lg={8} md={8} sm={8} xs={8} >
       <Typography component='p' type='body' color='primary'>
-      First move the human icon to the place where you want to add an experience. Then click on 'ADD NEW NOTCH' button. Fill in the details and click 'Add Notch'.
+      To add a notch allow browser to access your location.Then click on 'ADD NEW NOTCH' button. Fill in the details and click 'Add Notch'.
       </Typography>
       </Grid>
       <Grid item lg={2} md={2} sm={2} xs={2}> </Grid>

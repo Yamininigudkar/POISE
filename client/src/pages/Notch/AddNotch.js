@@ -123,7 +123,6 @@ render(){
     <Grid item lg={12} md={12} sm={12} >
     <center>
     <Typography type='headline' component='h1' style={{color: 'white', fontSize: '2.6em',backgroundColor: 'skyblue'}}> <em>Add a Notch</em>
-    
     </Typography>
     </center>
     </Grid>
@@ -132,7 +131,8 @@ render(){
     </Grid>
 
     <Grid item lg={6} md={6} sm={6} xs={6}>
-     <h4>Select Category</h4>
+     <Typography type='headline' component='p' color='primary'> <em>Select a Category</em>
+    </Typography>
     </Grid>
     <Grid item lg={6} md={6} sm={6} xs={6}>
     <FormControl fullWidth >
@@ -191,8 +191,8 @@ render(){
     </Grid>
     <Grid item lg={12} md={12} sm={12} xs={12}>
     
-   <h4> Add an Image</h4>
-   
+   <Typography type='heading' component='p' color='primary'> <em>Add Image</em>
+    </Typography>
     <input type="file" accept="image/*" onChange={this.changeImage} />
     </Grid>
     <Grid item lg={12} md={12} sm={12} >

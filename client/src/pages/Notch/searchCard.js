@@ -83,16 +83,7 @@ render(){
    </Typography>
 
    </Grid>
-
-   <Grid item lg={12} md={12} sm={12} xs={12} >
-   <center>
-   <Button raised color='primary' >
-   Close
-   </Button>
-   </center>
-   </Grid>
-
-   </Grid>
+  </Grid>
    <Grid item lg={1} md={1} sm={1} xs={1} > </Grid>
    </Grid>
    </Grid>
