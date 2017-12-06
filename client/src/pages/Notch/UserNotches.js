@@ -9,6 +9,7 @@ import {
 } from 'material-ui-icons'
 import { red } from 'material-ui/colors'
 import API from '../../utils/API';
+import '../../styles/userNotches.css'
 
 class UserNotchCard extends React.Component{
   constructor(props){
