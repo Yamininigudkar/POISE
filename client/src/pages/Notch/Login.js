@@ -143,22 +143,22 @@ class Login extends React.Component{
 		})
 	}
 
-	  alertOptions = {
-	    offset: 14,
-	    position: 'bottom left',
-	    theme: 'dark',
-	    time: 9000,
-	    transition: 'scale'
-	  }
-	 
-	  showAlert = () => {
-	  	let app = this
-	    this.msg.error('incorrect username or password', {
-	      time: 2000,
-	      type: 'success',
-	    })
-	  }
-	 
+	alertOptions = {
+		offset: 14,
+		position: 'bottom left',
+		theme: 'dark',
+		time: 9000,
+		transition: 'scale'
+	}
+
+	showAlert = () => {
+		let app = this
+		this.msg.error('incorrect username or password', {
+			time: 2000,
+			type: 'success',
+		})
+	}
+
 
 	showLogin(){
 		if(this.state.loggedIn){
@@ -189,7 +189,7 @@ class Login extends React.Component{
 						avatarLetter={notch.title[0].toUpperCase()}
 						title={notch.title}
 						description={notch.description}
-						imgUrl={'/'+'/localhost:3001/findoneimage/' + notch._id}
+						imgUrl={'https:/'+'/notchme.herokuapp.com/findoneimage/'+ notch._id}
 						timestamp={notch.date}
 						category={notch.category}
 						id={notch._id}
@@ -270,11 +270,11 @@ class Login extends React.Component{
 		console.log("this is the new render", this.state)
 		return (
 			<div>
-				{this.showLogin()} 
-				<div>
-					<AlertContainer ref={a => this.msg = a} {...this.alertOptions} />    
-		     	</div>
-		     </div>
+			{this.showLogin()} 
+			<div>
+			<AlertContainer ref={a => this.msg = a} {...this.alertOptions} />    
+			</div>
+			</div>
 			)
 	}
 

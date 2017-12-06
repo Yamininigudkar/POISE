@@ -99,7 +99,7 @@ render(){
    <GridList
    cellHeight= {250}
    
-    style={styles.gridList}
+   style={styles.gridList}
    id="notchlist"
    >
    {this.state.notches.map(notch => (
@@ -122,10 +122,7 @@ render(){
     <Typography key={notch.category} component='p'>
     Category: {notch.category}
     </Typography>
-    <Typography key={notch.description} component='p'>
-    Experience: {notch.description}
-    </Typography>
-
+    
     <Button raised id='View Notch'  onClick={() => this.openNotch(notch._id)} color='primary' style={{margin:10}} >View Notch</Button>
     
 
@@ -144,19 +141,19 @@ render(){
     
     ))}
 
-   </GridList>
-   </div>
-   </Grid>
-   <Grid item lg={2} md={2} sm={2} xs={12} > </Grid>
-   </Grid>
-   </Grid>
-   </Grid>
-   </Grid>
-   </Grid>
+    </GridList>
+    </div>
+    </Grid>
+    <Grid item lg={2} md={2} sm={2} xs={12} > </Grid>
+    </Grid>
+    </Grid>
+    </Grid>
+    </Grid>
+    </Grid>
 
-   </Paper>
-   )
- }
+    </Paper>
+    )
+  }
 }
 
 export default NotchesList
