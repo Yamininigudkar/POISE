@@ -115,20 +115,18 @@ class SignUp extends React.Component{
   render(){
     return (   
       <Grid container id='add-notch-dialog' style={{ margin: '10px'}}>
-        <Grid item lg={1} md={1} sm={1} > </Grid>
-        <Grid item lg={10} md={10} sm={10} >
+        <Grid item lg={1} md={1} sm={1} xs={1} > </Grid>
+        <Grid item lg={10} md={10} sm={10} xs={10}>
           <Grid container>
-            <Grid item lg={12} md={12} sm={12} >
+            <Grid item lg={12} md={12} sm={12} xs={12} >
                   <center>
-                    <Typography type='heading' component='h1' color='primary'>
-                      Sign-Up!!
-                    </Typography>
+                    <Typography type='headline' component='h1' style={{color: 'white', fontSize: '2.6em',backgroundColor: 'skyblue'}}> <em> Sign-up!!</em> </Typography>
                   </center>
             </Grid>
-            <Grid item lg={12} md={12} sm={12} >
+            <Grid item lg={12} md={12} sm={12} xs={12}>
               <Divider />
             </Grid>
-              <Grid item lg={6} md={6} sm={6} >
+              <Grid item lg={6} md={6} sm={6} xs={6}>
               <FormControl fullWidth >
                 <Select
                   value={this.state.category}
@@ -143,35 +141,35 @@ class SignUp extends React.Component{
 
             </Grid>
                                    
-            <Grid item lg={12} md={12} sm={12} >
+            <Grid item lg={12} md={12} sm={12} xs={12} >
               <Divider />
             </Grid>
-            <Grid item lg={12} md={12} sm={12} >
+            <Grid item lg={12} md={12} sm={12} xs={12} >
               <Grid container>
-                <Grid item lg={6} md={6} sm={6} >
+                <Grid item lg={6} md={6} sm={6}  xs={12}>
                   <TextField id='FN' value={this.state.firstName}
                     fullWidth onChange={this.changefirstName} label='First Name'
                   />
                 </Grid>
-                <Grid item lg={6} md={6} sm={6} >
+                <Grid item lg={6} md={6} sm={6} xs={12} >
                   <TextField id='SN' value={this.state.lastName}
                     fullWidth onChange={this.changelastName} label='Last Name'
                   />
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item lg={12} md={12} sm={12} >
+            <Grid item lg={12} md={12} sm={12} xs={12} >
               <Divider />
             </Grid>
-            <Grid item lg={12} md={12} sm={12} >
+            <Grid item lg={12} md={12} sm={12} xs={12}>
               <TextField  fullWidth id='username' value={this.state.username}
                 onChange={this.changeuserName} label='Username' 
               />
             </Grid>
-            <Grid item lg={12} md={12} sm={12} >
+            <Grid item lg={12} md={12} sm={12} xs={12} >
               <Divider />
             </Grid>
-            <Grid item lg={12} md={12} sm={12} >
+            <Grid item lg={12} md={12} sm={12} xs={12}>
               <TextField fullWidth
                 id='password'
                 type='password' value={this.state.password}
@@ -180,7 +178,7 @@ class SignUp extends React.Component{
               />
             </Grid>
 
-            <Grid item lg={12} md={12} sm={12} >
+            <Grid item lg={12} md={12} sm={12} xs={12} >
               <TextField fullWidth type='password'
                 id='confirmpassword'
                  value={this.state.confirmpassword}
@@ -188,7 +186,7 @@ class SignUp extends React.Component{
                 rows={3}
               />
             </Grid>
-            <Grid item lg={12} md={12} sm={12} >
+            <Grid item lg={12} md={12} sm={12} xs={12} >
               <center>
                 <Button raised color='primary' onClick={this.signUp}>
                   Submit
@@ -198,7 +196,7 @@ class SignUp extends React.Component{
             </Grid>
           </Grid>
         </Grid>
-        <Grid item lg={1} md={1} sm={1} > </Grid>
+        <Grid item lg={1} md={1} sm={1} xs={1}> </Grid>
       </Grid>
     )
   }

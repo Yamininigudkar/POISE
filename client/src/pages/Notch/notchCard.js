@@ -76,23 +76,23 @@ const MyMapComponent = compose(
       return (
        <Paper id='right-paper' style={{padding: '10px'}}>
        <Grid container id='add-notch-dialog' style={{ margin: '10px'}}>
-       <Grid item lg={12} md={12} sm={12} > 
-       <Grid item lg={10} md={10} sm={10} >
+       <Grid item lg={12} md={12} sm={12} xs={12} > 
+       <Grid item lg={10} md={10} sm={10} xs={10} >
        <Grid container>
-       <Grid item lg={12} md={12} sm={12} >
+       <Grid item lg={12} md={12} sm={12} xs={12}>
        <center>
        <Typography type='heading' component='h1' color='primary'>
        {this.state.notchData.title}
        </Typography>
        </center>
        </Grid>
-       <Grid item lg={12} md={12} sm={12} >
+       <Grid item lg={12} md={12} sm={12} xs={12} >
        <center>
        <Divider />
        <img src={this.state.image} style={styles.img}/>
        </center>
        </Grid>
-       <Grid item lg={12} md={12} sm={12} >
+       <Grid item lg={12} md={12} sm={12} xs={12}>
        <MyMapComponent
        isMarkerShown={this.state.isMarkerShown}
        lat={this.state.notchData.latitude}
@@ -100,20 +100,20 @@ const MyMapComponent = compose(
        />
        </Grid>
        <Divider/>
-       <Grid item lg={12} md={12} sm={12} >
+       <Grid item lg={12} md={12} sm={12} xs={12}>
        <Typography type='heading' component='h4' >
        Category: {this.state.notchData.category}
        </Typography>
 
        </Grid>
-       <Grid item lg={12} md={12} sm={12} >
+       <Grid item lg={12} md={12} sm={12} xs={12} >
        <Typography type='heading' component='p' >
        {this.state.notchData.description}
        </Typography>
 
        </Grid>
 
-       <Grid item lg={12} md={12} sm={12} >
+       <Grid item lg={12} md={12} sm={12} xs={12}>
        <center>
        <Button raised color='primary' >
        Close
@@ -122,7 +122,7 @@ const MyMapComponent = compose(
        </Grid>
 
        </Grid>
-       <Grid item lg={1} md={1} sm={1} > </Grid>
+       <Grid item lg={1} md={1} sm={1} xs={1} > </Grid>
        </Grid>
        </Grid>
        </Grid>

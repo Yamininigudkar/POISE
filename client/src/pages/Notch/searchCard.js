@@ -51,17 +51,17 @@ render(){
   return (
    <Paper id='right-paper' style={{padding: '10px'}}>
    <Grid container id='add-notch-dialog' style={{ margin: '10px'}}>
-   <Grid item lg={12} md={12} sm={12} > 
-   <Grid item lg={10} md={10} sm={10} >
+   <Grid item lg={12} md={12} sm={12} xs={12} > 
+   <Grid item lg={10} md={10} sm={10} xs={10} >
    <Grid container>
-   <Grid item lg={12} md={12} sm={12} >
+   <Grid item lg={12} md={12} sm={12} sm={12} >
    <center>
    <Typography type='heading' component='h1' color='primary'>
    {this.props.data.title}
    </Typography>
    </center>
    </Grid>
-   <Grid item lg={12} md={12} sm={12} >
+   <Grid item lg={12} md={12} sm={12} xs={12} >
    <center>
    <Divider />
    <img src={this.state.image} style={styles.img}/>
@@ -71,20 +71,20 @@ render(){
    <MyFancyComponent
 
    />
-   <Grid item lg={12} md={12} sm={12} >
+   <Grid item lg={12} md={12} sm={12} xs={12} >
    <Typography type='text' component='h4' >
    Category:{this.props.data.category}
    </Typography>
 
    </Grid>
-   <Grid item lg={12} md={12} sm={12} >
+   <Grid item lg={12} md={12} sm={12} xs={12} >
    <Typography type='text' component='p' >
    {this.props.data.description}
    </Typography>
 
    </Grid>
 
-   <Grid item lg={12} md={12} sm={12} >
+   <Grid item lg={12} md={12} sm={12} xs={12} >
    <center>
    <Button raised color='primary' >
    Close
@@ -93,7 +93,7 @@ render(){
    </Grid>
 
    </Grid>
-   <Grid item lg={1} md={1} sm={1} > </Grid>
+   <Grid item lg={1} md={1} sm={1} xs={1} > </Grid>
    </Grid>
    </Grid>
    </Grid>

@@ -59,7 +59,7 @@ console.log(this.state.searchCategory)
       </Typography>
       </center>
       </Grid>
-      <Grid item lg={4} md={4} sm={4} xs={4}>
+      <Grid item lg={4} md={4} sm={4} xs={6}>
       <TextField fullWidth select
       id='search-by'
       value={this.state.searchCategory}
@@ -85,7 +85,7 @@ console.log(this.state.searchCategory)
       </Button>
       <Button raised id='search-button'
       color='primary' onClick={this.clearSearch}>
-      Clear Search
+      Clear
       </Button>
       </Grid>
       
