@@ -46,7 +46,7 @@ deleteNotch(){
   subheader={this.props.timestamp}
   />
   <CardMedia image={this.props.imgUrl} title="Image Title" >
-  <img src={this.props.imgUrl} style={{width:350}}/>
+  <img src={this.props.imgUrl} style={{width:550}}/>
  
   </CardMedia>
   <CardContent>
