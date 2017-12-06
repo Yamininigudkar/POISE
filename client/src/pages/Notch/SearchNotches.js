@@ -74,6 +74,8 @@ console.log(this.state.searchCategory)
       <MenuItem key='animal' value='Animal'>Animal</MenuItem>
       <MenuItem key='outdoor' value='Outdoor'>Outdoor</MenuItem>
       <MenuItem key='lifestyle' value='Lifestyle'>Lifestyle</MenuItem>
+      <MenuItem key='Entertainment' value='Entertainment'>Entertainment</MenuItem>
+      <MenuItem key='Others' value='Lifestyle'>Others</MenuItem>
 
       </TextField>
       </Grid>
