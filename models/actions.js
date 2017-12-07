@@ -11,13 +11,11 @@ module.exports = {
 
 
     newUser: function (req, res) {
-        console.log(req);
+
         User.findOne({ 'username': req.body.username }, function (err, user) {
             if (err) {
-                console.log(err);
                 res.send('unsuccessful');
             } else if (user == null) {
-                // console.log('no user');
                 bcrypt.genSalt(10, function (err, salt) {
                     bcrypt.hash(req.body.password, salt, function (err, hash) {
                         let newUser = {
@@ -147,21 +145,6 @@ searchNotches: function(req, res) {
         }
     })
 
-},
-searchNotchesKeyWord: function(req, res) {
-    let keyWord = req.params.keyWord
-   // db.products.find( { sku: { $regex: /^ABC/i } } )
-   Notch.find({ title: { $regex: `/${keyWord}/`} }, function(err, data) {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log('search Notches');
-        res.json(data);
-    }
-})
-
 }
-
-
 
 }

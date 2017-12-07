@@ -1,13 +1,11 @@
 import React from 'react'
-
 import {
   Grid, Typography, TextField, Button
 } from 'material-ui'
 import { MenuItem } from 'material-ui/Menu'
-//import '../styles/search_notches.css'
 import axios from 'axios'
 import API from '../../utils/API';
-//import { $SERVER } from '../utils/server'
+
 
 class SearchNotches extends React.Component{
 
@@ -20,7 +18,7 @@ class SearchNotches extends React.Component{
     this.state = {
 
       searchCategory: ''
-}
+    }
   }
 
   changeSearchCategory(event){
@@ -40,13 +38,11 @@ class SearchNotches extends React.Component{
 
   search(){
 
-console.log(this.state.searchCategory)
     API.searchData(this.state.searchCategory)
     .then(searchdata =>{
-      console.log("searchdata",searchdata)
       this.props.setFilteredNotches(searchdata.data)
-  })
-}
+    })
+  }
   render(){
     return (
       <Grid container>
@@ -95,7 +91,7 @@ console.log(this.state.searchCategory)
       </Grid>
       </Grid>
       )
+    }
   }
-}
 
-export default SearchNotches
+  export default SearchNotches

@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { 
   Grid, Typography, Select,
   Divider, TextField, Button,Paper
@@ -7,7 +6,6 @@ import {
 import { FormControl } from 'material-ui/Form'
 import { MenuItem } from 'material-ui/Menu'
 import { Clear } from 'material-ui-icons'
-import '../../styles/rightbar.css'
 import API from '../../utils/API';
 import MyFancyComponent from './Map'
 
@@ -31,14 +29,9 @@ class SearchCard extends React.Component{
  }
 
  componentWillMount(){
-  console.log("data",this.props.data)
-  console.log("notchdata",this.state.notchData)
-
-
+  
   API.searchData(this.props.data._id)
   .then(res =>{
-    console.log(res, "this came back after")
-
     this.setState({image:'https:/'+'/notchme.herokuapp.com/findoneimage/'+this.props.data._id})
   })
 
@@ -83,7 +76,7 @@ render(){
    </Typography>
 
    </Grid>
-  </Grid>
+   </Grid>
    <Grid item lg={1} md={1} sm={1} xs={1} > </Grid>
    </Grid>
    </Grid>

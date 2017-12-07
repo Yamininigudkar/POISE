@@ -25,11 +25,10 @@ export default {
 		return axios.get('/notches')
 	},
 	notchDetails:function(notchid){
-		console.log(notchid	, "this is the notchid")
 		return axios.get('/findone/'+ notchid)
 	},
 	imageDetails:function(notchid){
-		console.log(notchid	, "this is the notchid")
+		
 		return axios.get('/findoneimage/'+ notchid)
 	},
 	searchData:function(category){
@@ -40,10 +39,10 @@ export default {
 		return axios.get('/userNotches')
 	},
 	searchData:function(category){
-        return axios.get('/notches/list_by_category/'+ category)
-    },
-    deleteNotch:function(id){
-        return axios.post('/deleteNotch', {id})
-    }
-		
+		return axios.get('/notches/list_by_category/'+ category)
+	},
+	deleteNotch:function(id){
+		return axios.post('/deleteNotch', {id})
+	}
+	
 };

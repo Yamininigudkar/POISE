@@ -65,10 +65,9 @@ displayNotches(){
   console.log("working")
   API.getAllNotches()
   .then(notchdata =>{
-   console.log("notchdata",notchdata)
-   this.setState({notches:notchdata.data})
+    this.setState({notches:notchdata.data})
 
- })
+  })
 }
 render(){
   return (
@@ -141,19 +140,19 @@ render(){
     
     ))}
 
-    </GridList>
-    </div>
-    </Grid>
-    <Grid item lg={2} md={2} sm={2} xs={12} > </Grid>
-    </Grid>
-    </Grid>
-    </Grid>
-    </Grid>
-    </Grid>
+   </GridList>
+   </div>
+   </Grid>
+   <Grid item lg={2} md={2} sm={2} xs={12} > </Grid>
+   </Grid>
+   </Grid>
+   </Grid>
+   </Grid>
+   </Grid>
 
-    </Paper>
-    )
-  }
+   </Paper>
+   )
+}
 }
 
 export default NotchesList

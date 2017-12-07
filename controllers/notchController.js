@@ -6,15 +6,13 @@ var session = require('express-session');
 let User = require('../models/user.js');
 let bcrypt = require('bcrypt');
 let Notch = require('../models/notch.js');
-//const mongoose = require("mongoose");
 let fs = require('fs');
-//mongoose.connect('mongodb://127.0.0.1/gridfstest');
-//var conn = mongoose.connection;
 var multer = require('multer');
-//var GridFsStorage = require('multer-gridfs-storage');
-//var Grid = require('gridfs-stream');
-//Grid.mongo = mongoose.mongo;
-//var gfs = Grid(conn.db);
+
+//Routes
+router.get('/', function (req, res) {
+  res.send(path.join(__dirname + './public/index.html'));
+})
 
 
 var storage = multer.diskStorage({
@@ -30,66 +28,12 @@ var upload = multer({ storage: storage });
 router.post('/uploadnotch', function (req, res) {
   upload(req, res, function (err) {
     if (err) {
-      // An error occurred when uploading+
       return
     }
     res.json("success")
-
-    // Everything went fine
+    
   })
 })
-
-
-
-
-//Routes
-router.get('/', function (req, res) {
-  res.send(path.join(__dirname + './public/index.html'));
-})
-
-
-
-
-// Receives and authenticates login information from existing users
-router.post('/existinguser', function(req,res){
-	User.findOne({ 'username': req.body.username }, function (err, user) {
-    if (err) {
-      console.log(err);
-      res.send('unsuccessful');
-    } else if (user == null) {
-                // console.log('no user');
-                res.send('unsuccessful');
-              } else {
-                // console.log(user);
-                var savedHash = user.password;
-                bcrypt.compare(req.body.password, savedHash, function (err, status) {
-                    // console.log(status);
-                    if(status === true){
-                      req.session.userId = user._id
-                      console.log(req.session.userId)
-                      res.json(user)
-                    } else{
-                      res.json('unsuccessful');
-                    } 
-                  });
-              }
-            })
-}
-
-);
-router.get('/logout',function(req,res){
-  res.clearCookie('user_sid')
-  res.json("success")
-  console.log("logout",req.session.userId)
-})
-
-// Accepts login information from new users, checks if the username exists, and saves the user if unique
-router.post('/newuser', actions.newUser);
-
-
-
-
-
 router.post('/newNotch',upload.any() ,function (req, res) {
   var imgPath = req.files[0].path
 
@@ -108,11 +52,42 @@ router.post('/newNotch',upload.any() ,function (req, res) {
   notchObj.save(function (err, notchObj) {
     if (err) throw err;
 
-    console.error('saved img to mongo');
   });
 
 });
 
+
+// Receives and authenticates login information from existing users
+router.post('/existinguser', function(req,res){
+  User.findOne({ 'username': req.body.username }, function (err, user) {
+    if (err) {
+      console.log(err);
+      res.send('unsuccessful');
+    } else if (user == null) {
+      res.send('unsuccessful');
+    } else {
+      var savedHash = user.password;
+      bcrypt.compare(req.body.password, savedHash, function (err, status) {
+                    // console.log(status);
+                    if(status === true){
+                      req.session.userId = user._id
+                      res.json(user)
+                    } else{
+                      res.json('unsuccessful');
+                    } 
+                  });
+    }
+  })
+}
+
+);
+router.get('/logout',function(req,res){
+  res.clearCookie('user_sid')
+  res.json("success")
+})
+
+// Accepts login information from new users, checks if the username exists, and saves the user if unique
+router.post('/newuser', actions.newUser);
 router.post('/getNotches', actions.getNotches);
 router.get('/notches', actions.getAllNotches);
 router.get('/findone/:id', actions.findOne);
@@ -120,6 +95,5 @@ router.get('/findoneimage/:id', actions.findOneImage);
 router.get('/userNotches', actions.userNotches);
 router.post('/deleteNotch', actions.deleteNotch);
 router.get('/notches/list_by_category/:category', actions.searchNotches);
-router.get('/notches/:keyword',actions.searchNotchesKeyWord)
 
 module.exports = router;

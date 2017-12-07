@@ -59,25 +59,20 @@ class Login extends React.Component{
 	}
 
 	login(event){
-		console.log('going to login')
 		event.preventDefault()
 		const userData={
 			username : this.state.username,
 			password : this.state.password
 		}
-		console.log("login")
-		console.log(userData)
+		
 		API.userLogin(userData)
 		.then(res => 
 		{
 			console.log(res, "this is the response")
 			if(res.data==='unsuccessful'){
-				console.log("unsesessful", this.state)
 				this.setState({invalid: true})
 				this.showAlert()
 			} else {
-				console.log("Response",res)
-				
 
 				this.setState({loggedIn:true})
 				this.setState({firstname:res.data.firstName})
@@ -104,7 +99,7 @@ class Login extends React.Component{
 	logOut(){
 		API.userlogOut()
 		.then(res =>{
-			console.log(res)
+			
 			console.log("Logout successful")
 			this.setState({loggedIn:false})
 			this.setState({username:""})
@@ -199,7 +194,7 @@ class Login extends React.Component{
 				</Dialog>
 				</Grid>
 				</Grid>
-				
+
 				<Grid item lg={12} md={12} sm={12} xs={12} >
 				<center>
 				<Button onClick={this.openAddNotch} color='primary'>
@@ -218,7 +213,7 @@ class Login extends React.Component{
 				</Button>
 				</center>
 				</Grid>
-				
+
 
 				)
 

@@ -3,7 +3,6 @@ import GoogleMapReact from 'google-map-react';
 import {compose, withProps} from 'recompose';
 import API from '../../utils/API';
 import {Link} from 'react-router-dom';
-import Google from './Google';
 import { Grid } from 'material-ui'
 import Leftbar from './Leftbar'
 import AddNotch from './AddNotch'
@@ -54,12 +53,12 @@ class Notch extends React.PureComponent {
       </Grid>
       {
         this.state.filteredNotches.map(notch => (
-          <Grid item lg={6} md={6} sm={6} >
-          <SearchCard 
-          data={notch}
-          />
-          </Grid>
-          ))
+        <Grid item lg={6} md={6} sm={6} >
+        <SearchCard 
+        data={notch}
+        />
+        </Grid>
+        ))
       }
       
       </Grid>
@@ -71,7 +70,7 @@ class Notch extends React.PureComponent {
       <Grid item lg={3} md={3} sm={3} xs={3}> </Grid>
       </Grid>
       );
+    }
   }
-}
 
-export default Notch;
+  export default Notch;

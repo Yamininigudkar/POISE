@@ -11,8 +11,6 @@
 }
 
 .form-group{
-	/*margin-left: 300px;
-	margin-right: 300px;*/
 	float:left;
 	margin: 0 20px 0 0;
 	float:top;
@@ -28,10 +26,6 @@
 
 }
 
-/*#search{
-margin-top: -20px;
-margin-left: -50px;
-}*/
 
 #description{
 	float:right;
@@ -45,7 +39,7 @@ margin-left: -50px;
 
 #google{
 
-margin-top:-30px;	
-margin-left: -20px;
+	margin-top:-30px;	
+	margin-left: -20px;
 
 }
