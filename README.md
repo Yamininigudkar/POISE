@@ -1,5 +1,6 @@
 # Notch 📍
 (Point of interest sharing and exploring)
+https://notchme.herokuapp.com/
 
 ## Collaborators
 - Yamini Nigudkar (Back-end developer and SCRUM master
